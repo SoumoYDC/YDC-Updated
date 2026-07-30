@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>PPF Calculator - Public Provident Fund Maturity & Interest</title>
+<meta name="description" content="Free PPF calculator to estimate your Public Provident Fund maturity value, interest earned, and total investment over the 15-year tenure.">
+<link rel="canonical" href="https://yourdailycalculator.com/ppf.html">
+
+<meta name="author" content="YourDaily Calculator">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="PPF Calculator - Public Provident Fund Maturity & Interest">
+<meta property="og:description" content="Free PPF calculator to estimate your Public Provident Fund maturity value, interest earned, and total investment over the 15-year tenure.">
+<meta property="og:site_name" content="YourDaily Calculator">
+<meta property="og:url" content="https://yourdailycalculator.com/ppf.html">
+<meta property="og:image" content="https://yourdailycalculator.com/images/logo.png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68M7H920SL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-68M7H920SL');
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is PPF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PPF (Public Provident Fund) is a long-term, government-backed savings scheme in India offering fixed, tax-free returns with a mandatory 15-year lock-in period. It's popular for retirement savings and long-term tax planning due to its safety and tax benefits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is PPF interest calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PPF interest is compounded annually and calculated on the lowest balance in your account between the 5th and last day of each month. Since deposits made early in the month earn interest for that full month, contributing before the 5th maximizes interest earned."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the current PPF interest rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The PPF interest rate is set by the Indian government and reviewed quarterly, so it can change over time. Always check the current official rate before relying on any specific figure for long-term planning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I withdraw from PPF before 15 years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Partial withdrawals are allowed starting from the 7th financial year, subject to specific limits based on your account balance. Premature closure of the entire account is only permitted in limited circumstances, such as medical emergencies or higher education needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PPF tax-free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PPF enjoys 'triple E' tax status in India — contributions, interest earned, and the final maturity amount are all exempt from tax, making it one of the most tax-efficient long-term savings options available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I extend my PPF account after 15 years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After the initial 15-year term, you can extend your PPF account in blocks of 5 years, either continuing to contribute or keeping it open without further deposits while it continues earning interest on the existing balance."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            🟧 YourDaily Calculator
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Calculators
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li><h6 class="dropdown-header">Marketing</h6></li>
+                        <li><a class="dropdown-item" href="cpm.html">CPM</a></li>
+                        <li><a class="dropdown-item" href="ctr.html">CTR</a></li>
+                        <li><a class="dropdown-item" href="cpc.html">CPC</a></li>
+                        <li><a class="dropdown-item" href="cpa.html">CPA</a></li>
+                        <li><a class="dropdown-item" href="roas.html">ROAS</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">Finance</h6></li>
+                        <li><a class="dropdown-item" href="sip.html">SIP</a></li>
+                        <li><a class="dropdown-item" href="emi.html">EMI</a></li>
+                        <li><a class="dropdown-item" href="cagr.html">CAGR</a></li>
+                        <li><a class="dropdown-item" href="ppf.html">PPF</a></li>
+                        <li><a class="dropdown-item" href="fd-rd.html">FD / RD</a></li>
+                        <li><a class="dropdown-item" href="cd.html">CD</a></li>
+                        <li><a class="dropdown-item" href="fixed-savings.html">Fixed Savings</a></li>
+                        <li><a class="dropdown-item" href="mortgage.html">Mortgage</a></li>
+                        <li><a class="dropdown-item" href="retirement.html">Retirement</a></li>
+                        <li><a class="dropdown-item" href="si-ci.html">SI / CI</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- CALCULATOR -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+            <h2 class="text-center mb-3 text-warning">PPF Calculator</h2>
+
+            <div class="text-center mb-4">
+
+                <h5 class="fw-bold">What is PPF?</h5>
+
+                <p class="text-muted">
+                    PPF (Public Provident Fund) is a long-term, government-backed savings scheme
+                    in India that offers fixed, compounding returns with a 15-year lock-in period.
+                    It's widely used for retirement savings and tax-efficient long-term investing.
+                </p>
+
+            </div>
+
+            <p class="text-center text-muted small fst-italic mb-3">
+                Disclaimer : Enter numbers in your local currency — the calculation works the same regardless of currency.
+            </p>
+
+            <!-- INPUTS -->
+            <div class="mb-3">
+                <label class="form-label">Yearly Investment</label>
+                <input type="number" id="ppf_yearly" class="form-control" placeholder="Example: 150000">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Annual Interest Rate (%)</label>
+                <input type="number" id="ppf_rate" class="form-control" placeholder="Example: 7.1">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Time Period (Years)</label>
+                <input type="number" id="ppf_years" class="form-control" placeholder="Example: 15">
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="d-flex gap-2">
+                <button class="btn btn-warning w-100" onclick="calculatePPF()">Calculate</button>
+                <button class="btn btn-secondary w-100" onclick="document.getElementById('ppf_yearly').value=''; document.getElementById('ppf_rate').value=''; document.getElementById('ppf_years').value=''; document.getElementById('ppf_result').innerHTML='';">
+                    Reset
+                </button>
+            </div>
+
+            <!-- RESULT -->
+            <div id="ppf_result" class="result-box mt-3"></div>
+
+            <hr>
+
+            <!-- FORMULA -->
+            <h5 class="fw-bold">Formula</h5>
+            <p>
+                Maturity Value = P × [(((1 + R)<sup>N</sup> − 1) ÷ R) × (1 + R)]
+            </p>
+            <p>
+                Where,
+            </p>
+            <ul>
+                <li><strong>P</strong> = Yearly Investment</li>
+                <li><strong>R</strong> = Annual Interest Rate</li>
+                <li><strong>N</strong> = Number of Years</li>
+            </ul>
+
+            <!-- EXAMPLE -->
+            <h5 class="fw-bold">Example</h5>
+            <p>If Yearly Investment = 1,50,000, Rate = 7.1%, and Time Period = 15 years:</p>
+            <p>Total Invested : <strong>22,50,000</strong></p>
+            <p>Interest Earned : <strong>18,18,345</strong> (approx)</p>
+            <p>Maturity Value : <strong>40,68,345</strong> (approx)</p>
+            <p class="text-muted small mb-0">
+                Figures are approximate — actual PPF returns depend on the government's quarterly
+                rate revisions and the exact timing of your deposits each year.
+            </p>
+
+            <hr>
+
+            <h5 class="fw-bold">How PPF Connects to Your Other Calculators</h5>
+            <p>
+                PPF is usually one option among several for long-term savings, so it's most useful
+                when compared directly against the alternatives.
+            </p>
+            <ul>
+                <li><strong><a href="fd-rd.html">FD / RD Calculator</a></strong> — both are low-risk, fixed-return options; comparing rates helps you decide which suits your liquidity needs and tax situation better.</li>
+                <li><strong><a href="sip.html">SIP Calculator</a></strong> — SIP investments carry market risk but historically offer higher potential returns than PPF's fixed, government-set rate.</li>
+                <li><strong><a href="cagr.html">CAGR Calculator</a></strong> — use CAGR to check the actual annual growth rate of a market investment and compare it directly against PPF's guaranteed rate.</li>
+                <li><strong><a href="retirement.html">Retirement Calculator</a></strong> — PPF's 15-year (or extended) tenure makes it a natural building block within a broader retirement savings plan.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="fw-bold">Related Calculators</h5>
+            <ul>
+                <li><a href="fd-rd.html">FD / RD Calculator</a> — compare against another guaranteed, fixed-rate savings option.</li>
+                <li><a href="sip.html">SIP Calculator</a> — see the potential returns of a market-linked alternative.</li>
+                <li><a href="cagr.html">CAGR Calculator</a> — measure the real growth rate of any investment for comparison.</li>
+                <li><a href="retirement.html">Retirement Calculator</a> — plan how PPF fits into your overall retirement savings.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="text-warning fw-bold">Frequently Asked Questions</h5>
+
+            <div class="accordion" id="ppfFaqAccordion">
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="ppfFaqHeading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ppfFaq1" aria-expanded="false" aria-controls="ppfFaq1">
+                            What is PPF?
+                        </button>
+                    </h3>
+                    <div id="ppfFaq1" class="accordion-collapse collapse" aria-labelledby="ppfFaqHeading1" data-bs-parent="#ppfFaqAccordion">
+                        <div class="accordion-body">
+                            PPF (Public Provident Fund) is a long-term, government-backed savings scheme in India offering fixed, tax-free returns with a mandatory 15-year lock-in period. It's popular for retirement savings and long-term tax planning due to its safety and tax benefits.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="ppfFaqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ppfFaq2" aria-expanded="false" aria-controls="ppfFaq2">
+                            How is PPF interest calculated?
+                        </button>
+                    </h3>
+                    <div id="ppfFaq2" class="accordion-collapse collapse" aria-labelledby="ppfFaqHeading2" data-bs-parent="#ppfFaqAccordion">
+                        <div class="accordion-body">
+                            PPF interest is compounded annually and calculated on the lowest balance in your account between the 5th and last day of each month. Since deposits made early in the month earn interest for that full month, contributing before the 5th maximizes interest earned.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="ppfFaqHeading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ppfFaq3" aria-expanded="false" aria-controls="ppfFaq3">
+                            What is the current PPF interest rate?
+                        </button>
+                    </h3>
+                    <div id="ppfFaq3" class="accordion-collapse collapse" aria-labelledby="ppfFaqHeading3" data-bs-parent="#ppfFaqAccordion">
+                        <div class="accordion-body">
+                            The PPF interest rate is set by the Indian government and reviewed quarterly, so it can change over time. Always check the current official rate before relying on any specific figure for long-term planning.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="ppfFaqHeading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ppfFaq4" aria-expanded="false" aria-controls="ppfFaq4">
+                            Can I withdraw from PPF before 15 years?
+                        </button>
+                    </h3>
+                    <div id="ppfFaq4" class="accordion-collapse collapse" aria-labelledby="ppfFaqHeading4" data-bs-parent="#ppfFaqAccordion">
+                        <div class="accordion-body">
+                            Partial withdrawals are allowed starting from the 7th financial year, subject to specific limits based on your account balance. Premature closure of the entire account is only permitted in limited circumstances, such as medical emergencies or higher education needs.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="ppfFaqHeading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ppfFaq5" aria-expanded="false" aria-controls="ppfFaq5">
+                            Is PPF tax-free?
+                        </button>
+                    </h3>
+                    <div id="ppfFaq5" class="accordion-collapse collapse" aria-labelledby="ppfFaqHeading5" data-bs-parent="#ppfFaqAccordion">
+                        <div class="accordion-body">
+                            PPF enjoys "triple E" tax status in India — contributions, interest earned, and the final maturity amount are all exempt from tax, making it one of the most tax-efficient long-term savings options available.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="ppfFaqHeading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ppfFaq6" aria-expanded="false" aria-controls="ppfFaq6">
+                            Can I extend my PPF account after 15 years?
+                        </button>
+                    </h3>
+                    <div id="ppfFaq6" class="accordion-collapse collapse" aria-labelledby="ppfFaqHeading6" data-bs-parent="#ppfFaqAccordion">
+                        <div class="accordion-body">
+                            Yes. After the initial 15-year term, you can extend your PPF account in blocks of 5 years, either continuing to contribute or keeping it open without further deposits while it continues earning interest on the existing balance.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="text-white text-center py-4 mt-5">
+
+    <p class="mb-2">
+        © 2026 YourDaily Calculator. All Rights Reserved.
+    </p>
+
+    <p class="mb-0">
+        <a href="about.html" style="color:var(--primary);" class="text-decoration-none">About Us</a>
+        <span class="text-white"> | </span>
+        <a href="privacy.html" style="color:var(--primary);" class="text-decoration-none">Privacy Policy</a>
+        <span class="text-white"> | </span>
+        <a href="disclaimer.html" style="color:var(--primary);" class="text-decoration-none">Disclaimer</a>
+    </p>
+
+</footer>
+
+<!-- JS -->
+<script src="js/script.js"></script>
+<script src="js/finance-calculators.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

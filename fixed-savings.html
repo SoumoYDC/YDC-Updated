@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Fixed Savings Calculator - Fixed-Rate Savings Maturity Value</title>
+<meta name="description" content="Free fixed savings calculator to estimate the maturity value and interest earned on a fixed-rate savings account. Includes formula, worked example, and compounding options.">
+<link rel="canonical" href="https://yourdailycalculator.com/fixed-savings.html">
+
+<meta name="author" content="YourDaily Calculator">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fixed Savings Calculator - Fixed-Rate Savings Maturity Value">
+<meta property="og:description" content="Free fixed savings calculator to estimate the maturity value and interest earned on a fixed-rate savings account. Includes formula, worked example, and compounding options.">
+<meta property="og:site_name" content="YourDaily Calculator">
+<meta property="og:url" content="https://yourdailycalculator.com/fixed-savings.html">
+<meta property="og:image" content="https://yourdailycalculator.com/images/logo.png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68M7H920SL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-68M7H920SL');
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a fixed savings account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A fixed savings account, also called a fixed-rate bond, lets you deposit a lump sum for a set term in exchange for a guaranteed interest rate. The rate stays the same for the whole term, regardless of what happens to interest rates elsewhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is interest calculated on a fixed-rate savings account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Interest is calculated using compound interest, based on the deposit amount, the annual rate, the term, and how often interest compounds. Most UK fixed-rate accounts compound annually, though some compound monthly or pay interest out rather than reinvesting it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I access my money before the term ends?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally no, fixed savings accounts restrict or prohibit withdrawals before the term ends, and some providers charge a penalty or close the account entirely if you try to withdraw early. This is the trade-off for the higher, guaranteed rate compared to an easy access account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my money protected in a fixed savings account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the UK, deposits with banks and building societies authorised by the Financial Conduct Authority are protected up to £85,000 per person, per institution, under the Financial Services Compensation Scheme, making fixed savings a low-risk option."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does compounding frequency affect my returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "More frequent compounding means you earn interest on previously earned interest more often, slightly increasing your total return. The difference between annual and monthly compounding is usually small but becomes more noticeable with larger deposits or longer terms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Fixed savings vs easy access savings, which is better?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fixed savings accounts usually offer a higher guaranteed rate in exchange for locking your money away for a set term, while easy access accounts offer flexibility with typically lower, variable rates. Fixed savings suit money you won't need until a known date, while easy access suits an emergency fund or short-term needs."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            🟧 YourDaily Calculator
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Calculators
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li><h6 class="dropdown-header">Marketing</h6></li>
+                        <li><a class="dropdown-item" href="cpm.html">CPM</a></li>
+                        <li><a class="dropdown-item" href="ctr.html">CTR</a></li>
+                        <li><a class="dropdown-item" href="cpc.html">CPC</a></li>
+                        <li><a class="dropdown-item" href="cpa.html">CPA</a></li>
+                        <li><a class="dropdown-item" href="roas.html">ROAS</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">Finance</h6></li>
+                        <li><a class="dropdown-item" href="sip.html">SIP</a></li>
+                        <li><a class="dropdown-item" href="emi.html">EMI</a></li>
+                        <li><a class="dropdown-item" href="cagr.html">CAGR</a></li>
+                        <li><a class="dropdown-item" href="ppf.html">PPF</a></li>
+                        <li><a class="dropdown-item" href="fd-rd.html">FD / RD</a></li>
+                        <li><a class="dropdown-item" href="cd.html">CD</a></li>
+                        <li><a class="dropdown-item" href="fixed-savings.html">Fixed Savings</a></li>
+                        <li><a class="dropdown-item" href="mortgage.html">Mortgage</a></li>
+                        <li><a class="dropdown-item" href="retirement.html">Retirement</a></li>
+                        <li><a class="dropdown-item" href="si-ci.html">SI / CI</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- CALCULATOR -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+            <h2 class="text-center mb-3 text-warning">Fixed Savings Calculator</h2>
+
+            <div class="text-center mb-4">
+
+                <h5 class="fw-bold">What is a Fixed Savings Calculator?</h5>
+
+                <p class="text-muted">
+                    A fixed savings calculator estimates how much your deposit will grow by the
+                    end of the term, based on the principal, annual interest rate, term length,
+                    and how often interest compounds. It's a quick way to compare fixed-rate
+                    savings offers before locking your money away.
+                </p>
+
+            </div>
+
+            <p class="text-center text-muted small fst-italic mb-3">
+                Disclaimer : Enter numbers in your local currency — the calculation works the same regardless of currency. This estimate excludes tax on interest.
+            </p>
+
+            <!-- INPUTS -->
+            <div class="mb-3">
+                <label class="form-label">Principal Amount</label>
+                <input type="number" id="fs_principal" class="form-control" placeholder="Example: 10000">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Annual Interest Rate (%)</label>
+                <input type="number" id="fs_rate" class="form-control" placeholder="Example: 4.5">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Term (Years)</label>
+                <input type="number" id="fs_years" class="form-control" placeholder="Example: 5">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Compounding Frequency</label>
+                <select id="fs_compound" class="form-select">
+                    <option value="1" selected>Annually</option>
+                    <option value="2">Half-Yearly</option>
+                    <option value="4">Quarterly</option>
+                    <option value="12">Monthly</option>
+                </select>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="d-flex gap-2">
+                <button class="btn btn-warning w-100" onclick="calculateFixedSavings()">Calculate</button>
+                <button class="btn btn-secondary w-100" onclick="document.getElementById('fs_principal').value=''; document.getElementById('fs_rate').value=''; document.getElementById('fs_years').value=''; document.getElementById('fs_compound').value='1'; document.getElementById('fs_result').innerHTML='';">
+                    Reset
+                </button>
+            </div>
+
+            <!-- RESULT -->
+            <div id="fs_result" class="result-box mt-3"></div>
+
+            <hr>
+
+            <!-- FORMULA -->
+            <h5 class="fw-bold">Formula</h5>
+            <p>
+                Maturity Value = P × (1 + r ÷ n)<sup>n × t</sup>
+            </p>
+            <p class="text-muted small mb-0">
+                Where P = principal, r = annual interest rate (as a decimal), n = number of
+                compounding periods per year, and t = term in years.
+            </p>
+
+            <!-- EXAMPLE -->
+            <h5 class="fw-bold mt-3">Example</h5>
+            <p>If Principal = 10,000, Rate = 4.5%, Term = 5 years, compounded annually:</p>
+            <p><strong>Maturity Value ≈ 12,462.22</strong></p>
+            <p class="text-muted small mb-0">
+                That's about 2,462.22 in interest earned over 5 years — with the exact figure
+                depending slightly on how often the interest compounds.
+            </p>
+
+            <hr>
+
+            <h5 class="fw-bold">How Fixed Savings Connects to Your Other Calculators</h5>
+            <p>
+                A fixed savings account is one of several ways to grow a lump sum safely, so it's
+                worth comparing it against similar fixed-return options before deciding where to
+                put your money.
+            </p>
+            <ul>
+                <li><strong><a href="cd.html">CD Calculator</a></strong> — the US equivalent of a fixed savings account; compare rates side by side if you're evaluating options across different banking systems.</li>
+                <li><strong><a href="fd-rd.html">FD / RD Calculator</a></strong> — Fixed Deposits work almost identically to fixed savings accounts; use it to compare returns across countries.</li>
+                <li><strong><a href="si-ci.html">SI / CI Calculator</a></strong> — a fixed savings account earns compound interest, so understanding how compound interest differs from simple interest explains why compounding frequency matters.</li>
+                <li><strong><a href="retirement.html">Retirement Calculator</a></strong> — if you're using fixed savings as part of a low-risk portion of your retirement plan, plug the same rate in to see its long-term contribution to your goal.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="fw-bold">Related Calculators</h5>
+            <ul>
+                <li><a href="cd.html">CD Calculator</a> — compare against a US Certificate of Deposit.</li>
+                <li><a href="fd-rd.html">FD / RD Calculator</a> — compare against a Fixed Deposit or Recurring Deposit.</li>
+                <li><a href="si-ci.html">SI / CI Calculator</a> — understand how simple and compound interest work.</li>
+                <li><a href="retirement.html">Retirement Calculator</a> — see how a fixed-rate return contributes to long-term goals.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="text-warning fw-bold">Frequently Asked Questions</h5>
+
+            <div class="accordion" id="fsFaqAccordion">
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fsFaqHeading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fsFaq1" aria-expanded="false" aria-controls="fsFaq1">
+                            What is a fixed savings account?
+                        </button>
+                    </h3>
+                    <div id="fsFaq1" class="accordion-collapse collapse" aria-labelledby="fsFaqHeading1" data-bs-parent="#fsFaqAccordion">
+                        <div class="accordion-body">
+                            A fixed savings account, also called a fixed-rate bond, lets you deposit a lump sum for a set term in exchange for a guaranteed interest rate. The rate stays the same for the whole term, regardless of what happens to interest rates elsewhere.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fsFaqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fsFaq2" aria-expanded="false" aria-controls="fsFaq2">
+                            How is interest calculated on a fixed-rate savings account?
+                        </button>
+                    </h3>
+                    <div id="fsFaq2" class="accordion-collapse collapse" aria-labelledby="fsFaqHeading2" data-bs-parent="#fsFaqAccordion">
+                        <div class="accordion-body">
+                            Interest is calculated using compound interest, based on the deposit amount, the annual rate, the term, and how often interest compounds. Most UK fixed-rate accounts compound annually, though some compound monthly or pay interest out rather than reinvesting it.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fsFaqHeading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fsFaq3" aria-expanded="false" aria-controls="fsFaq3">
+                            Can I access my money before the term ends?
+                        </button>
+                    </h3>
+                    <div id="fsFaq3" class="accordion-collapse collapse" aria-labelledby="fsFaqHeading3" data-bs-parent="#fsFaqAccordion">
+                        <div class="accordion-body">
+                            Generally no, fixed savings accounts restrict or prohibit withdrawals before the term ends, and some providers charge a penalty or close the account entirely if you try to withdraw early. This is the trade-off for the higher, guaranteed rate compared to an easy access account.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fsFaqHeading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fsFaq4" aria-expanded="false" aria-controls="fsFaq4">
+                            Is my money protected in a fixed savings account?
+                        </button>
+                    </h3>
+                    <div id="fsFaq4" class="accordion-collapse collapse" aria-labelledby="fsFaqHeading4" data-bs-parent="#fsFaqAccordion">
+                        <div class="accordion-body">
+                            In the UK, deposits with banks and building societies authorised by the Financial Conduct Authority are protected up to £85,000 per person, per institution, under the Financial Services Compensation Scheme, making fixed savings a low-risk option.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fsFaqHeading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fsFaq5" aria-expanded="false" aria-controls="fsFaq5">
+                            How does compounding frequency affect my returns?
+                        </button>
+                    </h3>
+                    <div id="fsFaq5" class="accordion-collapse collapse" aria-labelledby="fsFaqHeading5" data-bs-parent="#fsFaqAccordion">
+                        <div class="accordion-body">
+                            More frequent compounding means you earn interest on previously earned interest more often, slightly increasing your total return. The difference between annual and monthly compounding is usually small but becomes more noticeable with larger deposits or longer terms.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fsFaqHeading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fsFaq6" aria-expanded="false" aria-controls="fsFaq6">
+                            Fixed savings vs easy access savings, which is better?
+                        </button>
+                    </h3>
+                    <div id="fsFaq6" class="accordion-collapse collapse" aria-labelledby="fsFaqHeading6" data-bs-parent="#fsFaqAccordion">
+                        <div class="accordion-body">
+                            Fixed savings accounts usually offer a higher guaranteed rate in exchange for locking your money away for a set term, while easy access accounts offer flexibility with typically lower, variable rates. Fixed savings suit money you won't need until a known date, while easy access suits an emergency fund or short-term needs.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="text-white text-center py-4 mt-5">
+
+    <p class="mb-2">
+        © 2026 YourDaily Calculator. All Rights Reserved.
+    </p>
+
+    <p class="mb-0">
+        <a href="about.html" style="color:var(--primary);" class="text-decoration-none">About Us</a>
+        <span class="text-white"> | </span>
+        <a href="privacy.html" style="color:var(--primary);" class="text-decoration-none">Privacy Policy</a>
+        <span class="text-white"> | </span>
+        <a href="disclaimer.html" style="color:var(--primary);" class="text-decoration-none">Disclaimer</a>
+    </p>
+
+</footer>
+
+<!-- JS -->
+<script src="js/script.js"></script>
+<script src="js/finance-calculators.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

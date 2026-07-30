@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>FD & RD Calculator - Fixed Deposit and Recurring Deposit Maturity</title>
+<meta name="description" content="Free FD and RD calculator to estimate the maturity value and interest earned on Fixed Deposits and Recurring Deposits. Includes formulas, worked examples, and compounding options.">
+<link rel="canonical" href="https://yourdailycalculator.com/fd-rd.html">
+
+<meta name="author" content="YourDaily Calculator">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="FD & RD Calculator - Fixed Deposit and Recurring Deposit Maturity">
+<meta property="og:description" content="Free FD and RD calculator to estimate the maturity value and interest earned on Fixed Deposits and Recurring Deposits. Includes formulas, worked examples, and compounding options.">
+<meta property="og:site_name" content="YourDaily Calculator">
+<meta property="og:url" content="https://yourdailycalculator.com/fd-rd.html">
+<meta property="og:image" content="https://yourdailycalculator.com/images/logo.png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68M7H920SL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-68M7H920SL');
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Fixed Deposit (FD)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Fixed Deposit is a savings option where you deposit a lump sum with a bank for a fixed term at a fixed interest rate. The funds earn compound interest and are generally locked in until maturity, though premature withdrawal is often allowed with a penalty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Recurring Deposit (RD)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Recurring Deposit is a savings option where you deposit a fixed amount every month for a chosen tenure, and the bank pays interest on each installment for the time it remains deposited. It's designed for people who want to build savings through regular monthly contributions rather than a single lump sum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is FD interest calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FD interest is calculated using compound interest, based on the principal, annual rate, term, and compounding frequency such as quarterly or monthly. More frequent compounding results in a marginally higher maturity value for the same stated rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is RD interest calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RD interest is calculated on each monthly installment separately, since each deposit earns interest only for the months it remains in the account. This means the first installment earns interest for the full tenure while the last installment earns interest for just one period, and the total is summed for the final maturity value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better, FD or RD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neither is universally better; an FD suits people with a lump sum to invest at once, while an RD suits people who want to save a fixed amount every month. Both typically offer similar interest rates at a given bank, so the right choice depends on how you plan to save rather than which option earns more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I withdraw an FD or RD before maturity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most banks allow premature withdrawal of both FDs and RDs, but usually at a reduced interest rate or with a penalty, and terms vary by bank. It's worth checking the specific premature withdrawal policy before opening either account if early access to funds is a possibility."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            🟧 YourDaily Calculator
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Calculators
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li><h6 class="dropdown-header">Marketing</h6></li>
+                        <li><a class="dropdown-item" href="cpm.html">CPM</a></li>
+                        <li><a class="dropdown-item" href="ctr.html">CTR</a></li>
+                        <li><a class="dropdown-item" href="cpc.html">CPC</a></li>
+                        <li><a class="dropdown-item" href="cpa.html">CPA</a></li>
+                        <li><a class="dropdown-item" href="roas.html">ROAS</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">Finance</h6></li>
+                        <li><a class="dropdown-item" href="sip.html">SIP</a></li>
+                        <li><a class="dropdown-item" href="emi.html">EMI</a></li>
+                        <li><a class="dropdown-item" href="cagr.html">CAGR</a></li>
+                        <li><a class="dropdown-item" href="ppf.html">PPF</a></li>
+                        <li><a class="dropdown-item" href="fd-rd.html">FD / RD</a></li>
+                        <li><a class="dropdown-item" href="cd.html">CD</a></li>
+                        <li><a class="dropdown-item" href="fixed-savings.html">Fixed Savings</a></li>
+                        <li><a class="dropdown-item" href="mortgage.html">Mortgage</a></li>
+                        <li><a class="dropdown-item" href="retirement.html">Retirement</a></li>
+                        <li><a class="dropdown-item" href="si-ci.html">SI / CI</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- CALCULATOR -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+            <h2 class="text-center mb-3 text-warning">FD & RD Calculator</h2>
+
+            <div class="text-center mb-4">
+
+                <h5>What are FD & RD?</h5>
+
+                <p>
+                    A Fixed Deposit (FD) lets you invest a lump sum for a fixed period at a fixed interest rate.
+                    A Recurring Deposit (RD) lets you invest a fixed amount every month for a fixed period.
+                </p>
+
+                <p class="mb-0">
+                    Both are low-risk savings options offered by banks with guaranteed, compounding returns.
+                </p>
+
+            </div>
+
+            <p class="text-center text-muted small fst-italic mb-3">
+                Disclaimer : Enter numbers in your local currency — the calculation works the same regardless of currency.
+            </p>
+
+            <!-- TABS -->
+            <ul class="nav nav-tabs mb-4" id="fdRdTabs">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fdTab" type="button">
+                        Fixed Deposit
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rdTab" type="button">
+                        Recurring Deposit
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+                <!-- FD TAB -->
+                <div class="tab-pane fade show active" id="fdTab">
+
+                    <div class="mb-3">
+                        <label class="form-label">Principal Amount</label>
+                        <input type="number" id="fd_principal" class="form-control" placeholder="Enter principal">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Interest Rate (% p.a.)</label>
+                        <input type="number" id="fd_rate" class="form-control" placeholder="Enter interest rate">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Tenure (Years)</label>
+                        <input type="number" id="fd_years" class="form-control" placeholder="Enter years">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Compounding Frequency</label>
+                        <select id="fd_compound" class="form-select">
+                            <option value="1" selected>Annually</option>
+                            <option value="2">Half-Yearly</option>
+                            <option value="4">Quarterly</option>
+                            <option value="12">Monthly</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-warning w-100" onclick="calculateFD()">Calculate</button>
+                        <button class="btn btn-secondary w-100" onclick="document.getElementById('fd_result').innerHTML=''">
+                            Reset
+                        </button>
+                    </div>
+
+                    <div id="fd_result" class="result-box mt-3"></div>
+
+                    <hr>
+
+                    <h5 class="fw-bold">FD Formula</h5>
+                    <p>Maturity Value = P × (1 + r/n)^(n × t)</p>
+                    <p class="text-muted small mb-0">
+                        Where P = principal, r = annual interest rate (as a decimal), n = number of
+                        compounding periods per year, and t = term in years.
+                    </p>
+
+                    <h5 class="fw-bold mt-3">FD Example</h5>
+                    <p>If Principal = 1,00,000, Rate = 6.5%, Term = 5 years, compounded quarterly:</p>
+                    <p><strong>Maturity Value ≈ 1,38,043.99</strong></p>
+                    <p class="text-muted small mb-0">
+                        That's about 38,043.99 in interest earned over 5 years on a one-time deposit.
+                    </p>
+
+                </div>
+
+                <!-- RD TAB -->
+                <div class="tab-pane fade" id="rdTab">
+
+                    <div class="mb-3">
+                        <label class="form-label">Monthly Investment</label>
+                        <input type="number" id="rd_monthly" class="form-control" placeholder="Enter monthly amount">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Interest Rate (% p.a.)</label>
+                        <input type="number" id="rd_rate" class="form-control" placeholder="Enter interest rate">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Tenure (Months)</label>
+                        <input type="number" id="rd_months" class="form-control" placeholder="Enter number of months">
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-warning w-100" onclick="calculateRD()">Calculate</button>
+                        <button class="btn btn-secondary w-100" onclick="document.getElementById('rd_result').innerHTML=''">
+                            Reset
+                        </button>
+                    </div>
+
+                    <div id="rd_result" class="result-box mt-3"></div>
+
+                    <hr>
+
+                    <h5 class="fw-bold">RD Formula</h5>
+                    <p>Maturity Value ≈ (P × n) + [P × n(n+1)/2 × (r/1200)]</p>
+                    <p class="text-muted small mb-0">Where P = Monthly Investment, n = Number of Months, r = Annual Interest Rate</p>
+
+                    <h5 class="fw-bold mt-3">RD Example</h5>
+                    <p>If Monthly Deposit = 5,000, Rate = 6.5%, Tenure = 24 months:</p>
+                    <p><strong>Maturity Value ≈ 1,28,125.00</strong></p>
+                    <p class="text-muted small mb-0">
+                        That's 1,20,000 invested plus about 8,125 in interest earned over 2 years
+                        of monthly deposits.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <h5 class="fw-bold">How FD & RD Connect to Your Other Calculators</h5>
+            <p>
+                Whether you have a lump sum or prefer saving monthly, it helps to see how these
+                fixed-return options stack up against other calculators on this site.
+            </p>
+            <ul>
+                <li><strong><a href="cd.html">CD Calculator</a></strong> — the US equivalent of an FD; compare rates directly if you're evaluating options across different banking systems.</li>
+                <li><strong><a href="fixed-savings.html">Fixed Savings Calculator</a></strong> — the UK equivalent of an FD, useful for the same kind of side-by-side rate comparison.</li>
+                <li><strong><a href="sip.html">SIP Calculator</a></strong> — like an RD, a SIP involves regular monthly contributions, but typically into market-linked instruments rather than a fixed-rate deposit — compare the two to weigh safety against growth potential.</li>
+                <li><strong><a href="ppf.html">PPF Calculator</a></strong> — another government-backed, low-risk option worth comparing against FD and RD rates for your safe-money allocation.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="fw-bold">Related Calculators</h5>
+            <ul>
+                <li><a href="cd.html">CD Calculator</a> — compare against a US Certificate of Deposit.</li>
+                <li><a href="fixed-savings.html">Fixed Savings Calculator</a> — compare against a UK fixed-rate savings account.</li>
+                <li><a href="sip.html">SIP Calculator</a> — compare monthly deposits against a market-linked investment.</li>
+                <li><a href="ppf.html">PPF Calculator</a> — check a low-risk, government-backed benchmark rate.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="text-warning fw-bold">Frequently Asked Questions</h5>
+
+            <div class="accordion" id="fdRdFaqAccordion">
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fdRdFaqHeading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fdRdFaq1" aria-expanded="false" aria-controls="fdRdFaq1">
+                            What is a Fixed Deposit (FD)?
+                        </button>
+                    </h3>
+                    <div id="fdRdFaq1" class="accordion-collapse collapse" aria-labelledby="fdRdFaqHeading1" data-bs-parent="#fdRdFaqAccordion">
+                        <div class="accordion-body">
+                            A Fixed Deposit is a savings option where you deposit a lump sum with a bank for a fixed term at a fixed interest rate. The funds earn compound interest and are generally locked in until maturity, though premature withdrawal is often allowed with a penalty.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fdRdFaqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fdRdFaq2" aria-expanded="false" aria-controls="fdRdFaq2">
+                            What is a Recurring Deposit (RD)?
+                        </button>
+                    </h3>
+                    <div id="fdRdFaq2" class="accordion-collapse collapse" aria-labelledby="fdRdFaqHeading2" data-bs-parent="#fdRdFaqAccordion">
+                        <div class="accordion-body">
+                            A Recurring Deposit is a savings option where you deposit a fixed amount every month for a chosen tenure, and the bank pays interest on each installment for the time it remains deposited. It's designed for people who want to build savings through regular monthly contributions rather than a single lump sum.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fdRdFaqHeading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fdRdFaq3" aria-expanded="false" aria-controls="fdRdFaq3">
+                            How is FD interest calculated?
+                        </button>
+                    </h3>
+                    <div id="fdRdFaq3" class="accordion-collapse collapse" aria-labelledby="fdRdFaqHeading3" data-bs-parent="#fdRdFaqAccordion">
+                        <div class="accordion-body">
+                            FD interest is calculated using compound interest, based on the principal, annual rate, term, and compounding frequency such as quarterly or monthly. More frequent compounding results in a marginally higher maturity value for the same stated rate.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fdRdFaqHeading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fdRdFaq4" aria-expanded="false" aria-controls="fdRdFaq4">
+                            How is RD interest calculated?
+                        </button>
+                    </h3>
+                    <div id="fdRdFaq4" class="accordion-collapse collapse" aria-labelledby="fdRdFaqHeading4" data-bs-parent="#fdRdFaqAccordion">
+                        <div class="accordion-body">
+                            RD interest is calculated on each monthly installment separately, since each deposit earns interest only for the months it remains in the account. This means the first installment earns interest for the full tenure while the last installment earns interest for just one period, and the total is summed for the final maturity value.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fdRdFaqHeading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fdRdFaq5" aria-expanded="false" aria-controls="fdRdFaq5">
+                            Which is better, FD or RD?
+                        </button>
+                    </h3>
+                    <div id="fdRdFaq5" class="accordion-collapse collapse" aria-labelledby="fdRdFaqHeading5" data-bs-parent="#fdRdFaqAccordion">
+                        <div class="accordion-body">
+                            Neither is universally better; an FD suits people with a lump sum to invest at once, while an RD suits people who want to save a fixed amount every month. Both typically offer similar interest rates at a given bank, so the right choice depends on how you plan to save rather than which option earns more.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="fdRdFaqHeading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fdRdFaq6" aria-expanded="false" aria-controls="fdRdFaq6">
+                            Can I withdraw an FD or RD before maturity?
+                        </button>
+                    </h3>
+                    <div id="fdRdFaq6" class="accordion-collapse collapse" aria-labelledby="fdRdFaqHeading6" data-bs-parent="#fdRdFaqAccordion">
+                        <div class="accordion-body">
+                            Most banks allow premature withdrawal of both FDs and RDs, but usually at a reduced interest rate or with a penalty, and terms vary by bank. It's worth checking the specific premature withdrawal policy before opening either account if early access to funds is a possibility.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="text-white text-center py-4 mt-5">
+
+    <p class="mb-2">
+        © 2026 YourDaily Calculator. All Rights Reserved.
+    </p>
+
+    <p class="mb-0">
+        <a href="about.html" style="color:var(--primary);" class="text-decoration-none">About Us</a>
+        <span class="text-white"> | </span>
+        <a href="privacy.html" style="color:var(--primary);" class="text-decoration-none">Privacy Policy</a>
+        <span class="text-white"> | </span>
+        <a href="disclaimer.html" style="color:var(--primary);" class="text-decoration-none">Disclaimer</a>
+    </p>
+
+</footer>
+
+<!-- JS -->
+<script src="js/script.js"></script>
+<script src="js/finance-calculators.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

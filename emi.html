@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>EMI Calculator - Loan EMI, Interest & Repayment Formula</title>
+<meta name="description" content="Free EMI calculator for home, car, and personal loans. Instantly see your monthly EMI, total interest, and total repayment with a visual breakdown chart.">
+<link rel="canonical" href="https://yourdailycalculator.com/emi.html">
+
+<meta name="keywords" content="EMI Calculator, Loan EMI Calculator, Home Loan EMI, Car Loan EMI, Personal Loan EMI">
+<meta name="author" content="YourDaily Calculator">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="EMI Calculator - Loan EMI, Interest & Repayment Formula">
+<meta property="og:description" content="Free EMI calculator for home, car, and personal loans. Instantly see your monthly EMI, total interest, and total repayment with a visual breakdown chart.">
+<meta property="og:site_name" content="YourDaily Calculator">
+<meta property="og:url" content="https://yourdailycalculator.com/emi.html">
+<meta property="og:image" content="https://yourdailycalculator.com/images/logo.png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68M7H920SL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-68M7H920SL');
+</script>
+
+<!-- Chart.js for the doughnut breakdown -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is EMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EMI stands for Equated Monthly Installment — the fixed amount you pay every month toward a loan until it's fully repaid. Each EMI payment is split into two parts: a portion that reduces your outstanding principal, and a portion that covers interest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is EMI calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EMI is calculated using the loan amount, the monthly interest rate, and the number of months in the loan tenure, based on a standard amortization formula. Early payments are weighted more toward interest, while later payments go increasingly toward the principal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does most of my EMI go toward interest at the start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Interest is calculated on your outstanding loan balance, which is highest at the beginning of the loan. As you pay down the principal over time, the interest portion of each EMI shrinks and more of your payment goes toward reducing the balance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much EMI can I afford?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A common guideline is keeping your total EMI payments under 40% of your monthly take-home income, though this varies based on your other expenses and financial goals. Lenders often use a similar debt-to-income ratio when approving loan amounts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a longer loan tenure always mean a lower EMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, a longer tenure spreads the same loan amount over more months, lowering the monthly EMI. However, it also increases the total interest paid over the life of the loan, so a lower EMI doesn't always mean a cheaper loan overall."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I reduce my total interest paid on a loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Making prepayments toward the principal, choosing a shorter tenure if affordable, or refinancing to a lower interest rate can all reduce the total interest paid over the loan's life."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            🟧 YourDaily Calculator
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Calculators
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li><h6 class="dropdown-header">Marketing</h6></li>
+                        <li><a class="dropdown-item" href="cpm.html">CPM</a></li>
+                        <li><a class="dropdown-item" href="ctr.html">CTR</a></li>
+                        <li><a class="dropdown-item" href="cpc.html">CPC</a></li>
+                        <li><a class="dropdown-item" href="cpa.html">CPA</a></li>
+                        <li><a class="dropdown-item" href="roas.html">ROAS</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">Finance</h6></li>
+                        <li><a class="dropdown-item" href="sip.html">SIP</a></li>
+                        <li><a class="dropdown-item" href="emi.html">EMI</a></li>
+                        <li><a class="dropdown-item" href="cagr.html">CAGR</a></li>
+                        <li><a class="dropdown-item" href="ppf.html">PPF</a></li>
+                        <li><a class="dropdown-item" href="fd-rd.html">FD / RD</a></li>
+                        <li><a class="dropdown-item" href="cd.html">CD</a></li>
+                        <li><a class="dropdown-item" href="fixed-savings.html">Fixed Savings</a></li>
+                        <li><a class="dropdown-item" href="mortgage.html">Mortgage</a></li>
+                        <li><a class="dropdown-item" href="retirement.html">Retirement</a></li>
+                        <li><a class="dropdown-item" href="si-ci.html">SI / CI</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- CALCULATOR -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+            <h2 class="text-center mb-3 text-warning">EMI Calculator</h2>
+
+            <div class="text-center mb-4">
+
+                <h5 class="mb-3 fw-bold">What is EMI?</h5>
+
+                <p>
+                    EMI (Equated Monthly Installment) is the fixed amount you pay every month towards your loan repayment. Every EMI consists of two parts:
+                </p>
+
+                <ul class="text-start" >
+                    <li>Principal Amount</li>
+                    <li>Interest Amount</li>
+                </ul>
+
+                <p class="text-center text-muted small fst-italic mb-3">
+                    Disclaimer : Enter numbers in your local currency — the calculation works the same regardless of currency.
+                </p>
+
+            </div>
+
+            <hr>
+
+            <h5 class="mb-3 fw-bold"">Loan Details</h5>
+
+            <div class="mb-3">
+                <label class="form-label">Loan Amount</label>
+                <input type="number" id="loan_amount" class="form-control" placeholder="Example: 1000000">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Annual Interest Rate (%)</label>
+                <input type="number" id="interest_rate" class="form-control" placeholder="Example: 8.5">
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <label class="form-label">Loan Tenure</label>
+                    <input type="number" id="loan_tenure" class="form-control" placeholder="Example: 20">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Unit</label>
+                    <select id="tenure_type" class="form-select">
+                        <option value="years">Years</option>
+                        <option value="months">Months</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+                <button class="btn btn-warning w-100" onclick="calculateEMI()">Calculate EMI</button>
+                <button class="btn btn-secondary w-100" onclick="resetEMI()">Reset</button>
+            </div>
+
+            <!-- RESULTS -->
+            <div id="emi_result" class="mt-5" style="display:none;">
+
+                <div class="row g-3">
+
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <small class="text-muted">Monthly EMI</small>
+                                <h3 id="monthly_emi" class="text-warning mt-2">0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <small class="text-muted">Total Interest</small>
+                                <h3 id="total_interest" class="text-warning mt-2">0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <small class="text-muted">Total Payment</small>
+                                <h3 id="total_payment" class="text-warning mt-2">0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CHART SECTION -->
+                <div id="chartSection" class="mt-4 text-center">
+
+                    <h5 class="mb-3">Payment Breakdown</h5>
+
+                    <div class="chart-wrapper">
+                        <canvas id="emiChart"></canvas>
+                        <div id="chartCenterText">
+                            <div id="chartTotal">0</div>
+                            <div id="chartLabel">Total Payment</div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <div class="legend-color principal-color"></div>
+                            <div id="principalAmount">0</div>
+                            <div id="principalPercent" class="text-muted">Principal</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="legend-color interest-color"></div>
+                            <div id="interestAmount">0</div>
+                            <div id="interestPercent" class="text-muted">Interest</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="my-5">
+
+            <h5 class="mb-3 fw-bold">EMI Formula</h5>
+
+            <p>
+                EMI = P × R × (1 + R)<sup>N</sup> ÷ [(1 + R)<sup>N</sup> − 1]
+            </p>
+
+            <p>Where,</p>
+
+            <ul>
+                <li><strong>P</strong> = Loan Amount</li>
+                <li><strong>R</strong> = Monthly Interest Rate</li>
+                <li><strong>N</strong> = Loan Tenure in Months</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="mb-3 fw-bold">Example</h5>
+
+            <p>Loan Amount : <strong>10,00,000</strong></p>
+            <p>Interest Rate : <strong>8.5%</strong></p>
+            <p>Tenure : <strong>20 Years</strong></p>
+            <p>Monthly EMI : <strong>8,678</strong></p>
+            <p>Total Interest Paid : <strong>10,82,720</strong></p>
+            <p>Total Payment : <strong>20,82,720</strong></p>
+
+            <hr>
+
+            <h5 class="mb-3 fw-bold">How Much EMI Can You Afford?</h5>
+            <p>
+                A widely used guideline among lenders and financial planners is the
+                <strong>40% rule</strong> — keeping your total monthly EMI payments (across all loans)
+                under 40% of your take-home income. Going beyond this can leave little room for
+                savings, emergencies, or other financial goals, even if a lender is willing to
+                approve a higher amount.
+            </p>
+            <p class="mb-0">
+                It's also worth remembering that a lower EMI from a longer tenure isn't automatically
+                the "cheaper" option — it usually means paying significantly more in total interest
+                over the life of the loan. Use the total interest and total payment figures above,
+                not just the monthly EMI, to judge the real cost of a loan.
+            </p>
+
+            <hr>
+
+            <h5 class="mb-3 fw-bold">How EMI Connects to Your Other Calculators</h5>
+            <p>
+                EMI doesn't exist in isolation — it's usually one piece of a bigger financial picture
+                involving what you're saving elsewhere and what you're working toward.
+            </p>
+            <ul>
+                <li><strong><a href="mortgage.html">Mortgage Calculator</a></strong> — a mortgage is essentially a specific, usually larger and longer type of EMI-based loan for property; the same core formula applies.</li>
+                <li><strong><a href="sip.html">SIP Calculator</a></strong> — some borrowers compare paying down a loan faster versus investing that extra money in a SIP instead, depending on which offers a better net return.</li>
+                <li><strong><a href="fd-rd.html">FD / RD Calculator</a></strong> — before taking a loan, it's worth checking whether existing fixed deposits could partially cover the need, avoiding interest costs entirely.</li>
+                <li><strong><a href="retirement.html">Retirement Calculator</a></strong> — long-term loan commitments directly affect how much you can set aside for retirement each month, so it helps to view both together.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="text-warning">Frequently Asked Questions</h5>
+
+            <div class="accordion" id="emiFaqAccordion">
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="emiFaqHeading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emiFaq1" aria-expanded="false" aria-controls="emiFaq1">
+                            What is EMI?
+                        </button>
+                    </h3>
+                    <div id="emiFaq1" class="accordion-collapse collapse" aria-labelledby="emiFaqHeading1" data-bs-parent="#emiFaqAccordion">
+                        <div class="accordion-body">
+                            EMI stands for Equated Monthly Installment — the fixed amount you pay every month toward a loan until it's fully repaid. Each EMI payment is split into two parts: a portion that reduces your outstanding principal, and a portion that covers interest.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="emiFaqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emiFaq2" aria-expanded="false" aria-controls="emiFaq2">
+                            How is EMI calculated?
+                        </button>
+                    </h3>
+                    <div id="emiFaq2" class="accordion-collapse collapse" aria-labelledby="emiFaqHeading2" data-bs-parent="#emiFaqAccordion">
+                        <div class="accordion-body">
+                            EMI is calculated using the loan amount, the monthly interest rate, and the number of months in the loan tenure, based on a standard amortization formula. Early payments are weighted more toward interest, while later payments go increasingly toward the principal.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="emiFaqHeading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emiFaq3" aria-expanded="false" aria-controls="emiFaq3">
+                            Why does most of my EMI go toward interest at the start?
+                        </button>
+                    </h3>
+                    <div id="emiFaq3" class="accordion-collapse collapse" aria-labelledby="emiFaqHeading3" data-bs-parent="#emiFaqAccordion">
+                        <div class="accordion-body">
+                            Interest is calculated on your outstanding loan balance, which is highest at the beginning of the loan. As you pay down the principal over time, the interest portion of each EMI shrinks and more of your payment goes toward reducing the balance.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="emiFaqHeading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emiFaq4" aria-expanded="false" aria-controls="emiFaq4">
+                            How much EMI can I afford?
+                        </button>
+                    </h3>
+                    <div id="emiFaq4" class="accordion-collapse collapse" aria-labelledby="emiFaqHeading4" data-bs-parent="#emiFaqAccordion">
+                        <div class="accordion-body">
+                            A common guideline is keeping your total EMI payments under 40% of your monthly take-home income, though this varies based on your other expenses and financial goals. Lenders often use a similar debt-to-income ratio when approving loan amounts.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="emiFaqHeading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emiFaq5" aria-expanded="false" aria-controls="emiFaq5">
+                            Does a longer loan tenure always mean a lower EMI?
+                        </button>
+                    </h3>
+                    <div id="emiFaq5" class="accordion-collapse collapse" aria-labelledby="emiFaqHeading5" data-bs-parent="#emiFaqAccordion">
+                        <div class="accordion-body">
+                            Yes, a longer tenure spreads the same loan amount over more months, lowering the monthly EMI. However, it also increases the total interest paid over the life of the loan, so a lower EMI doesn't always mean a cheaper loan overall.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="emiFaqHeading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emiFaq6" aria-expanded="false" aria-controls="emiFaq6">
+                            Can I reduce my total interest paid on a loan?
+                        </button>
+                    </h3>
+                    <div id="emiFaq6" class="accordion-collapse collapse" aria-labelledby="emiFaqHeading6" data-bs-parent="#emiFaqAccordion">
+                        <div class="accordion-body">
+                            Yes. Making prepayments toward the principal, choosing a shorter tenure if affordable, or refinancing to a lower interest rate can all reduce the total interest paid over the loan's life.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="text-white text-center py-4 mt-5">
+
+    <p class="mb-2">
+        © 2026 YourDaily Calculator. All Rights Reserved.
+    </p>
+
+    <p class="mb-0">
+        <a href="about.html" style="color:var(--primary);" class="text-decoration-none">About Us</a>
+        <span class="text-white"> | </span>
+        <a href="privacy.html" style="color:var(--primary);" class="text-decoration-none">Privacy Policy</a>
+        <span class="text-white"> | </span>
+        <a href="disclaimer.html" style="color:var(--primary);" class="text-decoration-none">Disclaimer</a>
+    </p>
+
+</footer>
+
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

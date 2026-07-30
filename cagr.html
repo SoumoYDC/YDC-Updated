@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>CAGR Calculator - Compound Annual Growth Rate Formula</title>
+<meta name="description" content="Free CAGR calculator to find the compound annual growth rate of any investment. Includes formula, worked example, and how CAGR compares to other return metrics.">
+<link rel="canonical" href="https://yourdailycalculator.com/cagr.html">
+
+<meta name="author" content="YourDaily Calculator">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="CAGR Calculator - Compound Annual Growth Rate Formula">
+<meta property="og:description" content="Free CAGR calculator to find the compound annual growth rate of any investment. Includes formula, worked example, and how CAGR compares to other return metrics.">
+<meta property="og:site_name" content="YourDaily Calculator">
+<meta property="og:url" content="https://yourdailycalculator.com/cagr.html">
+<meta property="og:image" content="https://yourdailycalculator.com/images/logo.png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68M7H920SL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-68M7H920SL');
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is CAGR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CAGR, or Compound Annual Growth Rate, is the average yearly growth rate of an investment over a period of time, assuming the growth was steady and compounded every year. It smooths out year-to-year volatility into a single, easy-to-compare percentage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is CAGR calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CAGR is calculated by dividing the final value of an investment by its initial value, raising that result to the power of 1 divided by the number of years, then subtracting 1. For example, an investment growing from $100,000 to $200,000 over 5 years has a CAGR of about 14.87%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between CAGR and average annual return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A simple average annual return adds up each year's return and divides by the number of years, which can be misleading with volatile investments. CAGR accounts for compounding, giving a more accurate picture of an investment's actual growth trajectory over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a higher CAGR always better?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally yes, but CAGR alone doesn't show the risk or volatility involved in achieving that return. Two investments can have the same CAGR while one experienced wild swings and the other grew steadily, so CAGR is best used alongside a risk assessment, not in isolation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can CAGR be negative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If an investment's final value is lower than its initial value, the CAGR will be negative, reflecting an average annual decline over the period measured."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good CAGR for a mutual fund or stock investment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For long-term equity investments, a CAGR in the 10-15% range is often considered strong, based on historical broad market averages, though this varies by market, asset class, and time period. Compare a fund's CAGR to a relevant benchmark index over the same period for better context."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            🟧 YourDaily Calculator
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Calculators
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li><h6 class="dropdown-header">Marketing</h6></li>
+                        <li><a class="dropdown-item" href="cpm.html">CPM</a></li>
+                        <li><a class="dropdown-item" href="ctr.html">CTR</a></li>
+                        <li><a class="dropdown-item" href="cpc.html">CPC</a></li>
+                        <li><a class="dropdown-item" href="cpa.html">CPA</a></li>
+                        <li><a class="dropdown-item" href="roas.html">ROAS</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">Finance</h6></li>
+                        <li><a class="dropdown-item" href="sip.html">SIP</a></li>
+                        <li><a class="dropdown-item" href="emi.html">EMI</a></li>
+                        <li><a class="dropdown-item" href="cagr.html">CAGR</a></li>
+                        <li><a class="dropdown-item" href="ppf.html">PPF</a></li>
+                        <li><a class="dropdown-item" href="fd-rd.html">FD / RD</a></li>
+                        <li><a class="dropdown-item" href="cd.html">CD</a></li>
+                        <li><a class="dropdown-item" href="fixed-savings.html">Fixed Savings</a></li>
+                        <li><a class="dropdown-item" href="mortgage.html">Mortgage</a></li>
+                        <li><a class="dropdown-item" href="retirement.html">Retirement</a></li>
+                        <li><a class="dropdown-item" href="si-ci.html">SI / CI</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- CALCULATOR -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+            <h2 class="text-center mb-3 text-warning">CAGR Calculator</h2>
+
+            <div class="text-center mb-4">
+
+                <h5 class="fw-bold">What is CAGR?</h5>
+
+                <p class="text-muted">
+                    CAGR (Compound Annual Growth Rate) is the average yearly rate at which an
+                    investment grows over a period of time, assuming steady compounding. It's
+                    widely used to compare the performance of mutual funds, stocks, and other
+                    investments over different time periods.
+                </p>
+
+            </div>
+
+            <p class="text-center text-muted small fst-italic mb-3">
+                Disclaimer : Enter numbers in your local currency — the calculation works the same regardless of currency.
+            </p>
+
+            <!-- INPUTS -->
+            <div class="mb-3">
+                <label class="form-label">Initial Investment Value</label>
+                <input type="number" id="cagr_initial" class="form-control" placeholder="Example: 100000">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Final Investment Value</label>
+                <input type="number" id="cagr_final" class="form-control" placeholder="Example: 200000">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Time Period (Years)</label>
+                <input type="number" id="cagr_years" class="form-control" placeholder="Example: 5">
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="d-flex gap-2">
+                <button class="btn btn-warning w-100" onclick="calculateCAGR()">Calculate</button>
+                <button class="btn btn-secondary w-100" onclick="document.getElementById('cagr_initial').value=''; document.getElementById('cagr_final').value=''; document.getElementById('cagr_years').value=''; document.getElementById('cagr_result').innerHTML='';">
+                    Reset
+                </button>
+            </div>
+
+            <!-- RESULT -->
+            <div id="cagr_result" class="result-box mt-3"></div>
+
+            <hr>
+
+            <!-- FORMULA -->
+            <h5 class="fw-bold">Formula</h5>
+            <p>
+                CAGR = [(Final Value ÷ Initial Value) ^ (1 ÷ Years)] − 1
+            </p>
+
+            <!-- EXAMPLE -->
+            <h5 class="fw-bold">Example</h5>
+            <p>If Initial Value = 1,00,000, Final Value = 2,00,000, and Time Period = 5 years:</p>
+            <p><strong>CAGR = 14.87%</strong></p>
+            <p class="text-muted small mb-0">
+                This means the investment grew at an average steady rate of 14.87% per year to
+                double in value over 5 years — even if the actual year-to-year growth was uneven.
+            </p>
+
+            <hr>
+
+            <h5 class="fw-bold">How CAGR Connects to Your Other Calculators</h5>
+            <p>
+                CAGR is often the number you calculate <em>after</em> the fact, to judge how well
+                an investment actually performed — which makes it useful alongside the calculators
+                you'd use to plan investments in the first place.
+            </p>
+            <ul>
+                <li><strong><a href="sip.html">SIP Calculator</a></strong> — while SIP projects future value using an assumed annual return, CAGR tells you the real, actual annual growth rate your SIP investment achieved once you know the numbers.</li>
+                <li><strong><a href="fd-rd.html">FD / RD Calculator</a></strong> — comparing a fixed deposit's guaranteed rate against a market investment's CAGR helps you judge whether the extra risk of market investing paid off.</li>
+                <li><strong><a href="ppf.html">PPF Calculator</a></strong> — PPF offers a fixed, government-set rate, making it a useful low-risk benchmark to compare against a market investment's CAGR.</li>
+                <li><strong><a href="retirement.html">Retirement Calculator</a></strong> — knowing your portfolio's actual historical CAGR gives you a more realistic growth rate to plug into long-term retirement projections, instead of guessing.</li>
+            </ul>
+            <p class="mb-0">
+                In short: CAGR looks backward to measure real performance, while calculators like
+                SIP and Retirement look forward to project it — using both together gives you a
+                much more grounded financial picture.
+            </p>
+
+            <hr>
+
+            <h5 class="fw-bold">Related Calculators</h5>
+            <ul>
+                <li><a href="sip.html">SIP Calculator</a> — project future investment growth using an assumed annual return.</li>
+                <li><a href="fd-rd.html">FD / RD Calculator</a> — compare against a guaranteed, fixed-rate alternative.</li>
+                <li><a href="ppf.html">PPF Calculator</a> — check a low-risk, government-backed benchmark rate.</li>
+                <li><a href="retirement.html">Retirement Calculator</a> — use a real CAGR figure to plan long-term goals more accurately.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="text-warning fw-bold">Frequently Asked Questions</h5>
+
+            <div class="accordion" id="cagrFaqAccordion">
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cagrFaqHeading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cagrFaq1" aria-expanded="false" aria-controls="cagrFaq1">
+                            What is CAGR?
+                        </button>
+                    </h3>
+                    <div id="cagrFaq1" class="accordion-collapse collapse" aria-labelledby="cagrFaqHeading1" data-bs-parent="#cagrFaqAccordion">
+                        <div class="accordion-body">
+                            CAGR, or Compound Annual Growth Rate, is the average yearly growth rate of an investment over a period of time, assuming the growth was steady and compounded every year. It smooths out year-to-year volatility into a single, easy-to-compare percentage.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cagrFaqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cagrFaq2" aria-expanded="false" aria-controls="cagrFaq2">
+                            How is CAGR calculated?
+                        </button>
+                    </h3>
+                    <div id="cagrFaq2" class="accordion-collapse collapse" aria-labelledby="cagrFaqHeading2" data-bs-parent="#cagrFaqAccordion">
+                        <div class="accordion-body">
+                            CAGR is calculated by dividing the final value of an investment by its initial value, raising that result to the power of 1 divided by the number of years, then subtracting 1. For example, an investment growing from $100,000 to $200,000 over 5 years has a CAGR of about 14.87%.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cagrFaqHeading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cagrFaq3" aria-expanded="false" aria-controls="cagrFaq3">
+                            What's the difference between CAGR and average annual return?
+                        </button>
+                    </h3>
+                    <div id="cagrFaq3" class="accordion-collapse collapse" aria-labelledby="cagrFaqHeading3" data-bs-parent="#cagrFaqAccordion">
+                        <div class="accordion-body">
+                            A simple average annual return adds up each year's return and divides by the number of years, which can be misleading with volatile investments. CAGR accounts for compounding, giving a more accurate picture of an investment's actual growth trajectory over time.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cagrFaqHeading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cagrFaq4" aria-expanded="false" aria-controls="cagrFaq4">
+                            Is a higher CAGR always better?
+                        </button>
+                    </h3>
+                    <div id="cagrFaq4" class="accordion-collapse collapse" aria-labelledby="cagrFaqHeading4" data-bs-parent="#cagrFaqAccordion">
+                        <div class="accordion-body">
+                            Generally yes, but CAGR alone doesn't show the risk or volatility involved in achieving that return. Two investments can have the same CAGR while one experienced wild swings and the other grew steadily, so CAGR is best used alongside a risk assessment, not in isolation.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cagrFaqHeading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cagrFaq5" aria-expanded="false" aria-controls="cagrFaq5">
+                            Can CAGR be negative?
+                        </button>
+                    </h3>
+                    <div id="cagrFaq5" class="accordion-collapse collapse" aria-labelledby="cagrFaqHeading5" data-bs-parent="#cagrFaqAccordion">
+                        <div class="accordion-body">
+                            Yes. If an investment's final value is lower than its initial value, the CAGR will be negative, reflecting an average annual decline over the period measured.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cagrFaqHeading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cagrFaq6" aria-expanded="false" aria-controls="cagrFaq6">
+                            What is a good CAGR for a mutual fund or stock investment?
+                        </button>
+                    </h3>
+                    <div id="cagrFaq6" class="accordion-collapse collapse" aria-labelledby="cagrFaqHeading6" data-bs-parent="#cagrFaqAccordion">
+                        <div class="accordion-body">
+                            For long-term equity investments, a CAGR in the 10-15% range is often considered strong, based on historical broad market averages, though this varies by market, asset class, and time period. Compare a fund's CAGR to a relevant benchmark index over the same period for better context.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="text-white text-center py-4 mt-5">
+
+    <p class="mb-2">
+        © 2026 YourDaily Calculator. All Rights Reserved.
+    </p>
+
+    <p class="mb-0">
+        <a href="about.html" style="color:var(--primary);" class="text-decoration-none">About Us</a>
+        <span class="text-white"> | </span>
+        <a href="privacy.html" style="color:var(--primary);" class="text-decoration-none">Privacy Policy</a>
+        <span class="text-white"> | </span>
+        <a href="disclaimer.html" style="color:var(--primary);" class="text-decoration-none">Disclaimer</a>
+    </p>
+
+</footer>
+
+<!-- JS -->
+<script src="js/script.js"></script>
+<script src="js/finance-calculators.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

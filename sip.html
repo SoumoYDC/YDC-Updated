@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>SIP Calculator - Systematic Investment Plan Returns & Step-Up Option</title>
+<meta name="description" content="Free SIP calculator with step-up option. Calculate mutual fund returns, total investment, and wealth gained with an interactive investment breakdown chart.">
+<link rel="canonical" href="https://yourdailycalculator.com/sip">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="SIP Calculator - Systematic Investment Plan Returns & Step-Up Option">
+<meta property="og:description" content="Free SIP calculator with step-up option. Calculate mutual fund returns, total investment, and wealth gained with an interactive investment breakdown chart.">
+<meta property="og:site_name" content="YourDaily Calculator">
+<meta property="og:url" content="https://yourdailycalculator.com/sip">
+<meta property="og:image" content="https://yourdailycalculator.com/images/logo.png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68M7H920SL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-68M7H920SL');
+</script>
+
+<!-- Chart.js for the doughnut breakdown -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a SIP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A SIP, or Systematic Investment Plan, is a method of investing a fixed amount in a mutual fund at regular intervals, usually monthly. Instead of investing a large sum at once, you invest smaller amounts consistently, which helps average out market ups and downs over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a step-up SIP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A step-up SIP is a variation where you increase your monthly investment amount by a fixed percentage every year, rather than keeping it constant. This lets your contributions grow alongside your income, often leading to a significantly larger corpus over the long term."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is SIP return calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SIP returns are calculated using a compound interest formula that accounts for monthly contributions and a monthly rate of return. Each installment grows for a different length of time depending on when it was invested, and the calculator adds all of these growth amounts together."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SIP better than a lump sum investment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neither is universally better. Lump sum investing can perform better in consistently rising markets, while SIP tends to reduce risk in volatile markets through rupee-cost averaging, since you buy more units when prices are low and fewer when prices are high."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good expected return rate to use in a SIP calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For long-term equity mutual funds, many investors use a rate between 10% and 12% per year as a planning estimate, based on historical averages. Actual returns depend on market performance and are never guaranteed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change my SIP amount later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, most mutual fund SIPs can be increased, decreased, paused, or stopped at any time without penalty. A step-up SIP simply automates the process of increasing your contribution on a set schedule."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            🟧 YourDaily Calculator
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Calculators
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li><h6 class="dropdown-header">Marketing</h6></li>
+                        <li><a class="dropdown-item" href="cpm.html">CPM</a></li>
+                        <li><a class="dropdown-item" href="ctr.html">CTR</a></li>
+                        <li><a class="dropdown-item" href="cpc.html">CPC</a></li>
+                        <li><a class="dropdown-item" href="cpa.html">CPA</a></li>
+                        <li><a class="dropdown-item" href="roas.html">ROAS</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">Finance</h6></li>
+                        <li><a class="dropdown-item" href="sip.html">SIP</a></li>
+                        <li><a class="dropdown-item" href="emi.html">EMI</a></li>
+                        <li><a class="dropdown-item" href="cagr.html">CAGR</a></li>
+                        <li><a class="dropdown-item" href="ppf.html">PPF</a></li>
+                        <li><a class="dropdown-item" href="fd-rd.html">FD / RD</a></li>
+                        <li><a class="dropdown-item" href="cd.html">CD</a></li>
+                        <li><a class="dropdown-item" href="fixed-savings.html">Fixed Savings</a></li>
+                        <li><a class="dropdown-item" href="mortgage.html">Mortgage</a></li>
+                        <li><a class="dropdown-item" href="retirement.html">Retirement</a></li>
+                        <li><a class="dropdown-item" href="si-ci.html">SI / CI</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+            <h2 class="text-center mb-3 text-warning">SIP Calculator</h2>
+
+            <!-- DEFINITION (CENTERED) -->
+            <div class="text-center mb-4">
+
+                <h5>What is SIP?</h5>
+
+                <p class="text-muted">
+                    SIP (Systematic Investment Plan) is a method of investing a fixed amount every month in mutual funds.
+                    It helps grow wealth through compounding over time.
+                </p>
+
+            </div>
+
+            <p class="text-center text-muted small fst-italic mb-3">
+                Disclaimer : Enter numbers in your local currency — the calculation works the same regardless of currency.
+            </p>
+
+            <!-- INPUTS -->
+            <div class="mb-3">
+                <label class="form-label">Monthly Investment</label>
+                <input type="number" id="sip_monthly" class="form-control" placeholder="Enter monthly amount">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Annual Return Rate (%)</label>
+                <input type="number" id="sip_rate" class="form-control" placeholder="Enter expected return">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Time Period (Years)</label>
+                <input type="number" id="sip_years" class="form-control" placeholder="Enter years">
+            </div>
+
+            <!-- STEP-UP SIP (OPTIONAL) -->
+            <div class="mb-3 p-3" style="background:#fff7ed; border-radius:10px; border:1px solid #fed7aa;">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="sip_stepup_enabled" onchange="toggleStepUp()">
+                    <label class="form-check-label fw-semibold" for="sip_stepup_enabled">
+                        Enable Step-Up SIP (optional)
+                    </label>
+                </div>
+                <div id="stepup_field" class="mt-2" style="display:none;">
+                    <label class="form-label">Annual Step-Up (%)</label>
+                    <input type="number" id="sip_stepup_percent" class="form-control" placeholder="e.g. 10">
+                    <small class="text-muted">Your monthly investment increases by this percentage every year.</small>
+                </div>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="d-flex gap-2">
+                <button class="btn btn-warning w-100" onclick="calculateSIP()">Calculate</button>
+                <button class="btn btn-secondary w-100" onclick="resetSIP()">
+                    Reset
+                </button>
+            </div>
+
+            <!-- RESULT -->
+            <div id="sip_result" class="result-box mt-3"></div>
+
+            <!-- CHART SECTION (appears after Calculate, same pattern as EMI page) -->
+            <div id="chartSection" class="mt-4 text-center">
+
+                <h5 class="mb-3">Investment Breakdown</h5>
+
+                <div class="chart-wrapper">
+                    <canvas id="sipChart"></canvas>
+                    <div id="chartCenterText">
+                        <div id="chartTotal">0</div>
+                        <div id="chartLabel">Total Value</div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <div class="legend-color principal-color"></div>
+                        <div id="principalAmount">0</div>
+                        <div id="principalPercent" class="text-muted">Invested</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="legend-color interest-color"></div>
+                        <div id="interestAmount">0</div>
+                        <div id="interestPercent" class="text-muted">Returns</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <!-- FORMULA -->
+            <h5>Formula</h5>
+            <p>
+                FV = P × (((1+r)^n −1)/r) × (1+r)
+            </p>
+
+            <p>
+                Where:<br>
+                P = Monthly Investment<br>
+                r = Monthly Interest Rate<br>
+                n = Total Months
+            </p>
+
+            <p class="text-muted small">
+                For step-up SIPs, the calculator recalculates your monthly investment amount at the start of each
+                year (increased by your chosen step-up %) and compounds each month's contribution individually.
+            </p>
+
+            <!-- EXAMPLE (FIXED) -->
+            <h5>Example</h5>
+            <p>
+                If you invest $5,000 every month for 10 years at an expected annual return of 12%:
+            </p>
+            <ul>
+                <li>Total Invested: <strong>$600,000</strong></li>
+                <li>Estimated Returns: <strong>$561,695</strong></li>
+                <li>Total Value: <strong>$1,161,695</strong></li>
+            </ul>
+            <p>
+                <strong>Returns grow significantly due to compounding</strong> — nearly half of the final value
+                in this example came purely from investment growth, not your own contributions.
+            </p>
+
+            <hr>
+
+            <!-- RELATED CALCULATORS -->
+            <h5>Related Calculators</h5>
+            <ul>
+                <li><a href="cagr.html">CAGR Calculator</a> — check the annual growth rate of any investment, including your SIP corpus.</li>
+                <li><a href="si-ci.html">Compound Interest Calculator</a> — see how compounding works on a lump sum, for comparison with SIP.</li>
+                <li><a href="ppf.html">PPF Calculator</a> — a government-backed alternative for long-term, low-risk savings.</li>
+                <li><a href="fd-rd.html">FD / RD Calculator</a> — compare fixed returns from deposits against SIP's market-linked growth.</li>
+                <li><a href="retirement.html">Retirement Calculator</a> — plan how your SIP investments can build toward a retirement goal.</li>
+            </ul>
+
+            <hr>
+
+            <!-- FAQ (VISIBLE, matches schema above) -->
+            <h5 class=" text-warning">Frequently Asked Questions</h5>
+
+            <div class="accordion" id="sipFaqAccordion">
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="sipFaqHeading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sipFaq1" aria-expanded="false" aria-controls="sipFaq1">
+                            What is a SIP?
+                        </button>
+                    </h3>
+                    <div id="sipFaq1" class="accordion-collapse collapse" aria-labelledby="sipFaqHeading1" data-bs-parent="#sipFaqAccordion">
+                        <div class="accordion-body">
+                            A SIP, or Systematic Investment Plan, is a method of investing a fixed amount in a mutual fund at regular intervals, usually monthly. Instead of investing a large sum at once, you invest smaller amounts consistently, which helps average out market ups and downs over time.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="sipFaqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sipFaq2" aria-expanded="false" aria-controls="sipFaq2">
+                            What is a step-up SIP?
+                        </button>
+                    </h3>
+                    <div id="sipFaq2" class="accordion-collapse collapse" aria-labelledby="sipFaqHeading2" data-bs-parent="#sipFaqAccordion">
+                        <div class="accordion-body">
+                            A step-up SIP is a variation where you increase your monthly investment amount by a fixed percentage every year, rather than keeping it constant. This lets your contributions grow alongside your income, often leading to a significantly larger corpus over the long term.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="sipFaqHeading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sipFaq3" aria-expanded="false" aria-controls="sipFaq3">
+                            How is SIP return calculated?
+                        </button>
+                    </h3>
+                    <div id="sipFaq3" class="accordion-collapse collapse" aria-labelledby="sipFaqHeading3" data-bs-parent="#sipFaqAccordion">
+                        <div class="accordion-body">
+                            SIP returns are calculated using a compound interest formula that accounts for monthly contributions and a monthly rate of return. Each installment grows for a different length of time depending on when it was invested, and the calculator adds all of these growth amounts together.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="sipFaqHeading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sipFaq4" aria-expanded="false" aria-controls="sipFaq4">
+                            Is SIP better than a lump sum investment?
+                        </button>
+                    </h3>
+                    <div id="sipFaq4" class="accordion-collapse collapse" aria-labelledby="sipFaqHeading4" data-bs-parent="#sipFaqAccordion">
+                        <div class="accordion-body">
+                            Neither is universally better. Lump sum investing can perform better in consistently rising markets, while SIP tends to reduce risk in volatile markets through rupee-cost averaging, since you buy more units when prices are low and fewer when prices are high.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="sipFaqHeading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sipFaq5" aria-expanded="false" aria-controls="sipFaq5">
+                            What is a good expected return rate to use in a SIP calculator?
+                        </button>
+                    </h3>
+                    <div id="sipFaq5" class="accordion-collapse collapse" aria-labelledby="sipFaqHeading5" data-bs-parent="#sipFaqAccordion">
+                        <div class="accordion-body">
+                            For long-term equity mutual funds, many investors use a rate between 10% and 12% per year as a planning estimate, based on historical averages. Actual returns depend on market performance and are never guaranteed.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="sipFaqHeading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sipFaq6" aria-expanded="false" aria-controls="sipFaq6">
+                            Can I change my SIP amount later?
+                        </button>
+                    </h3>
+                    <div id="sipFaq6" class="accordion-collapse collapse" aria-labelledby="sipFaqHeading6" data-bs-parent="#sipFaqAccordion">
+                        <div class="accordion-body">
+                            Yes, most mutual fund SIPs can be increased, decreased, paused, or stopped at any time without penalty. A step-up SIP simply automates the process of increasing your contribution on a set schedule.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="text-white text-center py-4 mt-5">
+
+    <p class="mb-2">
+        © 2026 YourDaily Calculator. All Rights Reserved.
+    </p>
+
+    <p class="mb-0">
+        <a href="about.html" style="color:var(--primary);" class="text-decoration-none">About Us</a> 
+        <span class="text-white"> | </span>
+        <a href="privacy.html" style="color:var(--primary);" class="text-decoration-none">Privacy Policy</a>
+        <span class="text-white"> | </span>
+<a href="disclaimer.html" style="color:var(--primary);" class="text-decoration-none">Disclaimer</a>
+ </p>
+
+</footer>
+<!-- JS -->
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+let sipDoughnut = null;
+
+function toggleStepUp() {
+    const enabled = document.getElementById('sip_stepup_enabled').checked;
+    document.getElementById('stepup_field').style.display = enabled ? 'block' : 'none';
+}
+
+function resetSIP() {
+    document.getElementById('sip_monthly').value = '';
+    document.getElementById('sip_rate').value = '';
+    document.getElementById('sip_years').value = '';
+    document.getElementById('sip_stepup_percent').value = '';
+    document.getElementById('sip_stepup_enabled').checked = false;
+    toggleStepUp();
+    document.getElementById('sip_result').innerHTML = '';
+    document.getElementById('chartSection').classList.remove('show');
+}
+
+function formatCurrency(num) {
+    return Math.round(num).toLocaleString('en-US');
+}
+
+function calculateSIP() {
+    const P = parseFloat(document.getElementById('sip_monthly').value);
+    const annualRate = parseFloat(document.getElementById('sip_rate').value);
+    const years = parseFloat(document.getElementById('sip_years').value);
+    const stepUpEnabled = document.getElementById('sip_stepup_enabled').checked;
+    const stepUpPercent = stepUpEnabled ? parseFloat(document.getElementById('sip_stepup_percent').value) || 0 : 0;
+
+    if (!P || !annualRate || !years) {
+        document.getElementById('sip_result').innerHTML = '<span class="text-danger">Please fill in all fields.</span>';
+        return;
+    }
+
+    const monthlyRate = annualRate / 12 / 100;
+    const totalMonths = Math.round(years * 12);
+
+    let balance = 0;
+    let totalInvested = 0;
+    let currentMonthlyInvestment = P;
+
+    for (let month = 1; month <= totalMonths; month++) {
+        // Apply step-up at the start of every new year (after year 1)
+        if (stepUpEnabled && month > 1 && (month - 1) % 12 === 0) {
+            currentMonthlyInvestment = currentMonthlyInvestment * (1 + stepUpPercent / 100);
+        }
+        balance = (balance + currentMonthlyInvestment) * (1 + monthlyRate);
+        totalInvested += currentMonthlyInvestment;
+    }
+
+    const totalValue = balance;
+    const estimatedReturns = totalValue - totalInvested;
+
+    document.getElementById('sip_result').innerHTML =
+        '<div>Total Invested: <strong>' + formatCurrency(totalInvested) + '</strong></div>' +
+        '<div>Estimated Returns: <strong>' + formatCurrency(estimatedReturns) + '</strong></div>' +
+        '<div>Total Value: <strong>' + formatCurrency(totalValue) + '</strong></div>';
+
+    updateChart(totalInvested, estimatedReturns, totalValue);
+}
+
+function updateChart(invested, returns, totalValue) {
+    const investedPct = ((invested / totalValue) * 100).toFixed(1);
+    const returnsPct = ((returns / totalValue) * 100).toFixed(1);
+
+    document.getElementById('chartTotal').innerText = formatCurrency(totalValue);
+    document.getElementById('principalAmount').innerText = formatCurrency(invested);
+    document.getElementById('principalPercent').innerText = 'Invested (' + investedPct + '%)';
+    document.getElementById('interestAmount').innerText = formatCurrency(returns);
+    document.getElementById('interestPercent').innerText = 'Returns (' + returnsPct + '%)';
+
+    const ctx = document.getElementById('sipChart').getContext('2d');
+
+    if (sipDoughnut) {
+        sipDoughnut.data.datasets[0].data = [invested, returns];
+        sipDoughnut.update();
+    } else {
+        sipDoughnut = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Invested', 'Returns'],
+                datasets: [{
+                    data: [invested, returns],
+                    backgroundColor: ['#F97316', '#E1A10B'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                cutout: '70%',
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + formatCurrency(context.raw);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    document.getElementById('chartSection').classList.add('show');
+}
+</script>
+
+</body>
+
+</html>
+
+

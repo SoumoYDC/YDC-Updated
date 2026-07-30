@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>SI & CI Calculator - Simple Interest and Compound Interest</title>
+<meta name="description" content="Free simple interest and compound interest calculator. Instantly see the interest earned and total amount, compare SI vs CI, with formulas and worked examples.">
+<link rel="canonical" href="https://yourdailycalculator.com/si-ci.html">
+
+<meta name="author" content="YourDaily Calculator">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="SI & CI Calculator - Simple Interest and Compound Interest">
+<meta property="og:description" content="Free simple interest and compound interest calculator. Instantly see the interest earned and total amount, compare SI vs CI, with formulas and worked examples.">
+<meta property="og:site_name" content="YourDaily Calculator">
+<meta property="og:url" content="https://yourdailycalculator.com/si-ci.html">
+<meta property="og:image" content="https://yourdailycalculator.com/images/logo.png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68M7H920SL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-68M7H920SL');
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Simple Interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simple Interest is interest calculated only on the original principal amount, for the entire duration of the loan or deposit. The interest earned stays the same each year since it is never added back to the principal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Compound Interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compound Interest is interest calculated on the principal plus any interest already earned, so the amount you earn interest on grows over time. This is why compound interest produces a larger total than simple interest over the same period."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between Simple and Compound Interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simple interest is calculated only on the original principal, so it grows at a constant rate every period, while compound interest is calculated on the principal plus accumulated interest, so it grows faster over time. The longer the duration, the bigger the gap between the two becomes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does compounding frequency affect Compound Interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The more often interest compounds, such as monthly instead of annually, the more frequently interest gets added to the principal, which slightly increases the total return for the same stated annual rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which grows money faster, SI or CI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compound interest grows money faster than simple interest over the same rate and period, because each period's interest is calculated on a larger base. The difference is small in the short term but becomes significant over many years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Simple Interest commonly used versus Compound Interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simple interest is commonly used for short-term loans, car loans, and some personal loans, while compound interest is used for savings accounts, fixed deposits, credit cards, and most long-term investments. Knowing which type applies to a product helps you understand its true cost or return."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            🟧 YourDaily Calculator
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Calculators
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li><h6 class="dropdown-header">Marketing</h6></li>
+                        <li><a class="dropdown-item" href="cpm.html">CPM</a></li>
+                        <li><a class="dropdown-item" href="ctr.html">CTR</a></li>
+                        <li><a class="dropdown-item" href="cpc.html">CPC</a></li>
+                        <li><a class="dropdown-item" href="cpa.html">CPA</a></li>
+                        <li><a class="dropdown-item" href="roas.html">ROAS</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">Finance</h6></li>
+                        <li><a class="dropdown-item" href="sip.html">SIP</a></li>
+                        <li><a class="dropdown-item" href="emi.html">EMI</a></li>
+                        <li><a class="dropdown-item" href="cagr.html">CAGR</a></li>
+                        <li><a class="dropdown-item" href="ppf.html">PPF</a></li>
+                        <li><a class="dropdown-item" href="fd-rd.html">FD / RD</a></li>
+                        <li><a class="dropdown-item" href="cd.html">CD</a></li>
+                        <li><a class="dropdown-item" href="fixed-savings.html">Fixed Savings</a></li>
+                        <li><a class="dropdown-item" href="mortgage.html">Mortgage</a></li>
+                        <li><a class="dropdown-item" href="retirement.html">Retirement</a></li>
+                        <li><a class="dropdown-item" href="si-ci.html">SI / CI</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- CALCULATOR -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+            <h2 class="text-center mb-3 text-warning">Simple & Compound Interest Calculator</h2>
+
+            <div class="text-center mb-4">
+
+                <h5>Simple vs Compound Interest</h5>
+
+                <p>
+                    Simple Interest (SI) is interest calculated only on the original amount you
+                    invest or borrow. Compound Interest (CI) is interest calculated on the
+                    original amount plus any interest already earned, so it grows faster over time.
+                </p>
+
+                <p class="mb-0">
+                    Use the tabs below to calculate either, and see how the two compare for the same principal, rate, and term.
+                </p>
+
+            </div>
+
+            <p class="text-center text-muted small fst-italic mb-3">
+                Disclaimer : Enter numbers in your local currency — the calculation works the same regardless of currency.
+            </p>
+
+            <!-- TABS -->
+            <ul class="nav nav-tabs mb-4" id="siCiTabs">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#siTab" type="button">
+                        Simple Interest
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ciTab" type="button">
+                        Compound Interest
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+                <!-- SI TAB -->
+                <div class="tab-pane fade show active" id="siTab">
+
+                    <div class="mb-3">
+                        <label class="form-label">Principal Amount</label>
+                        <input type="number" id="si_principal" class="form-control" placeholder="Enter principal">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Interest Rate (% p.a.)</label>
+                        <input type="number" id="si_rate" class="form-control" placeholder="Enter interest rate">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Tenure (Years)</label>
+                        <input type="number" id="si_years" class="form-control" placeholder="Enter years">
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-warning w-100" onclick="calculateSI()">Calculate</button>
+                        <button class="btn btn-secondary w-100" onclick="document.getElementById('si_principal').value=''; document.getElementById('si_rate').value=''; document.getElementById('si_years').value=''; document.getElementById('si_result').innerHTML='';">
+                            Reset
+                        </button>
+                    </div>
+
+                    <div id="si_result" class="result-box mt-3"></div>
+
+                    <hr>
+
+                    <h5 class="fw-bold">SI Formula</h5>
+                    <p>Simple Interest = (P × r × t) ÷ 100</p>
+                    <p class="text-muted small mb-0">
+                        Where P = principal, r = annual interest rate, and t = time in years.
+                        The interest earned is the same for every year of the term.
+                    </p>
+
+                    <h5 class="fw-bold mt-3">SI Example</h5>
+                    <p>If Principal = 10,000, Rate = 8%, Term = 5 years:</p>
+                    <p><strong>Interest Earned = 4,000</strong> &nbsp;|&nbsp; <strong>Total Amount = 14,000</strong></p>
+
+                </div>
+
+                <!-- CI TAB -->
+                <div class="tab-pane fade" id="ciTab">
+
+                    <div class="mb-3">
+                        <label class="form-label">Principal Amount</label>
+                        <input type="number" id="ci_principal" class="form-control" placeholder="Enter principal">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Interest Rate (% p.a.)</label>
+                        <input type="number" id="ci_rate" class="form-control" placeholder="Enter interest rate">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Tenure (Years)</label>
+                        <input type="number" id="ci_years" class="form-control" placeholder="Enter years">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Compounding Frequency</label>
+                        <select id="ci_compound" class="form-select">
+                            <option value="1" selected>Annually</option>
+                            <option value="2">Half-Yearly</option>
+                            <option value="4">Quarterly</option>
+                            <option value="12">Monthly</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-warning w-100" onclick="calculateCI()">Calculate</button>
+                        <button class="btn btn-secondary w-100" onclick="document.getElementById('ci_principal').value=''; document.getElementById('ci_rate').value=''; document.getElementById('ci_years').value=''; document.getElementById('ci_compound').value='1'; document.getElementById('ci_result').innerHTML='';">
+                            Reset
+                        </button>
+                    </div>
+
+                    <div id="ci_result" class="result-box mt-3"></div>
+
+                    <hr>
+
+                    <h5 class="fw-bold">CI Formula</h5>
+                    <p>Total Amount = P × (1 + r ÷ n)<sup>n × t</sup></p>
+                    <p class="text-muted small mb-0">
+                        Where P = principal, r = annual interest rate (as a decimal), n = number of
+                        compounding periods per year, and t = time in years. Interest Earned = Total Amount − P.
+                    </p>
+
+                    <h5 class="fw-bold mt-3">CI Example</h5>
+                    <p>If Principal = 10,000, Rate = 8%, Term = 5 years, compounded annually:</p>
+                    <p><strong>Interest Earned ≈ 4,693.28</strong> &nbsp;|&nbsp; <strong>Total Amount ≈ 14,693.28</strong></p>
+                    <p class="text-muted small mb-0">
+                        Compare this to the Simple Interest example above — same principal, rate,
+                        and term, but 693.28 more earned simply because of compounding.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <h5 class="fw-bold">How SI & CI Connect to Your Other Calculators</h5>
+            <p>
+                Almost every other calculator on this site is really a variation of simple or
+                compound interest applied to a real-world product.
+            </p>
+            <ul>
+                <li><strong><a href="fd-rd.html">FD / RD Calculator</a></strong> — Fixed and Recurring Deposits both use compound interest; this calculator explains the underlying maths behind those results.</li>
+                <li><strong><a href="cd.html">CD Calculator</a></strong> and <strong><a href="fixed-savings.html">Fixed Savings Calculator</a></strong> — also compound interest products; compare compounding frequencies to see the effect on returns.</li>
+                <li><strong><a href="emi.html">EMI Calculator</a></strong> — loan EMIs are built on compound interest principles, which is why more of your early payments go toward interest.</li>
+                <li><strong><a href="cagr.html">CAGR Calculator</a></strong> — CAGR measures the compound annual growth rate of an investment, extending the same compounding logic to variable-return assets.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="fw-bold">Related Calculators</h5>
+            <ul>
+                <li><a href="fd-rd.html">FD / RD Calculator</a> — see compound interest applied to a real fixed deposit.</li>
+                <li><a href="cd.html">CD Calculator</a> — compare compounding frequency on a Certificate of Deposit.</li>
+                <li><a href="emi.html">EMI Calculator</a> — see how compound interest shapes loan repayments.</li>
+                <li><a href="cagr.html">CAGR Calculator</a> — measure compound annual growth on an investment.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="text-warning fw-bold">Frequently Asked Questions</h5>
+
+            <div class="accordion" id="siCiFaqAccordion">
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="siCiFaqHeading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#siCiFaq1" aria-expanded="false" aria-controls="siCiFaq1">
+                            What is Simple Interest?
+                        </button>
+                    </h3>
+                    <div id="siCiFaq1" class="accordion-collapse collapse" aria-labelledby="siCiFaqHeading1" data-bs-parent="#siCiFaqAccordion">
+                        <div class="accordion-body">
+                            Simple Interest is interest calculated only on the original principal amount, for the entire duration of the loan or deposit. The interest earned stays the same each year since it is never added back to the principal.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="siCiFaqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#siCiFaq2" aria-expanded="false" aria-controls="siCiFaq2">
+                            What is Compound Interest?
+                        </button>
+                    </h3>
+                    <div id="siCiFaq2" class="accordion-collapse collapse" aria-labelledby="siCiFaqHeading2" data-bs-parent="#siCiFaqAccordion">
+                        <div class="accordion-body">
+                            Compound Interest is interest calculated on the principal plus any interest already earned, so the amount you earn interest on grows over time. This is why compound interest produces a larger total than simple interest over the same period.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="siCiFaqHeading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#siCiFaq3" aria-expanded="false" aria-controls="siCiFaq3">
+                            What's the difference between Simple and Compound Interest?
+                        </button>
+                    </h3>
+                    <div id="siCiFaq3" class="accordion-collapse collapse" aria-labelledby="siCiFaqHeading3" data-bs-parent="#siCiFaqAccordion">
+                        <div class="accordion-body">
+                            Simple interest is calculated only on the original principal, so it grows at a constant rate every period, while compound interest is calculated on the principal plus accumulated interest, so it grows faster over time. The longer the duration, the bigger the gap between the two becomes.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="siCiFaqHeading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#siCiFaq4" aria-expanded="false" aria-controls="siCiFaq4">
+                            How does compounding frequency affect Compound Interest?
+                        </button>
+                    </h3>
+                    <div id="siCiFaq4" class="accordion-collapse collapse" aria-labelledby="siCiFaqHeading4" data-bs-parent="#siCiFaqAccordion">
+                        <div class="accordion-body">
+                            The more often interest compounds, such as monthly instead of annually, the more frequently interest gets added to the principal, which slightly increases the total return for the same stated annual rate.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="siCiFaqHeading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#siCiFaq5" aria-expanded="false" aria-controls="siCiFaq5">
+                            Which grows money faster, SI or CI?
+                        </button>
+                    </h3>
+                    <div id="siCiFaq5" class="accordion-collapse collapse" aria-labelledby="siCiFaqHeading5" data-bs-parent="#siCiFaqAccordion">
+                        <div class="accordion-body">
+                            Compound interest grows money faster than simple interest over the same rate and period, because each period's interest is calculated on a larger base. The difference is small in the short term but becomes significant over many years.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="siCiFaqHeading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#siCiFaq6" aria-expanded="false" aria-controls="siCiFaq6">
+                            Where is Simple Interest commonly used versus Compound Interest?
+                        </button>
+                    </h3>
+                    <div id="siCiFaq6" class="accordion-collapse collapse" aria-labelledby="siCiFaqHeading6" data-bs-parent="#siCiFaqAccordion">
+                        <div class="accordion-body">
+                            Simple interest is commonly used for short-term loans, car loans, and some personal loans, while compound interest is used for savings accounts, fixed deposits, credit cards, and most long-term investments. Knowing which type applies to a product helps you understand its true cost or return.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="text-white text-center py-4 mt-5">
+
+    <p class="mb-2">
+        © 2026 YourDaily Calculator. All Rights Reserved.
+    </p>
+
+    <p class="mb-0">
+        <a href="about.html" style="color:var(--primary);" class="text-decoration-none">About Us</a>
+        <span class="text-white"> | </span>
+        <a href="privacy.html" style="color:var(--primary);" class="text-decoration-none">Privacy Policy</a>
+        <span class="text-white"> | </span>
+        <a href="disclaimer.html" style="color:var(--primary);" class="text-decoration-none">Disclaimer</a>
+    </p>
+
+</footer>
+
+<!-- JS -->
+<script src="js/script.js"></script>
+<script src="js/finance-calculators.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

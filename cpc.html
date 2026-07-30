@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>CPC Calculator - Cost Per Click Formula & Benchmarks</title>
+<meta name="description" content="Free CPC calculator to find your cost per click instantly. Includes formula, industry benchmarks, and tips to lower your ad costs.">
+<link rel="canonical" href="https://yourdailycalculator.com/cpc.html">
+
+<meta name="author" content="YourDaily Calculator">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="CPC Calculator - Cost Per Click Formula & Benchmarks">
+<meta property="og:description" content="Free CPC calculator to find your cost per click instantly. Includes formula, industry benchmarks, and tips to lower your ad costs.">
+<meta property="og:site_name" content="YourDaily Calculator">
+<meta property="og:url" content="https://yourdailycalculator.com/cpc.html">
+<meta property="og:image" content="https://yourdailycalculator.com/images/logo.png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68M7H920SL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-68M7H920SL');
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good CPC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good CPC depends heavily on your industry and how much a customer is worth to you. Highly competitive industries like legal or insurance often see CPCs of several dollars, while other niches can be well under a dollar. Compare your CPC to your profit margin per sale, not just industry averages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is CPC calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CPC is calculated by dividing your total ad spend by the total number of clicks received. For example, spending $200 to get 100 clicks gives a CPC of $2."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between CPC and CPA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CPC measures the cost of a single click, regardless of what happens afterward. CPA measures the cost of an actual conversion, such as a sale or sign-up. A campaign can have a low CPC but a high CPA if very few clicks lead to conversions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I lower my CPC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Improving your ad's relevance and click-through rate often lowers CPC on auction-based platforms like Google and Facebook, since these platforms reward ads that perform well with lower costs. Narrowing targeting and testing different bidding strategies can also help."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do CPCs vary so much between platforms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CPC depends on competition for the same audience or keywords. Platforms and industries with more advertisers bidding for the same attention, like Google Search ads for competitive keywords, tend to have higher CPCs than less competitive channels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a lower CPC always better?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. A very low CPC can sometimes come from broad, low-intent traffic that doesn't convert well. It's more useful to look at CPC alongside conversion rate and CPA to judge whether the clicks you're paying for are actually valuable."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            🟧 YourDaily Calculator
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Calculators
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li><h6 class="dropdown-header">Marketing</h6></li>
+                        <li><a class="dropdown-item" href="cpm.html">CPM</a></li>
+                        <li><a class="dropdown-item" href="ctr.html">CTR</a></li>
+                        <li><a class="dropdown-item" href="cpc.html">CPC</a></li>
+                        <li><a class="dropdown-item" href="cpa.html">CPA</a></li>
+                        <li><a class="dropdown-item" href="roas.html">ROAS</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">Finance</h6></li>
+                        <li><a class="dropdown-item" href="sip.html">SIP</a></li>
+                        <li><a class="dropdown-item" href="emi.html">EMI</a></li>
+                        <li><a class="dropdown-item" href="cagr.html">CAGR</a></li>
+                        <li><a class="dropdown-item" href="ppf.html">PPF</a></li>
+                        <li><a class="dropdown-item" href="fd-rd.html">FD / RD</a></li>
+                        <li><a class="dropdown-item" href="cd.html">CD</a></li>
+                        <li><a class="dropdown-item" href="fixed-savings.html">Fixed Savings</a></li>
+                        <li><a class="dropdown-item" href="mortgage.html">Mortgage</a></li>
+                        <li><a class="dropdown-item" href="retirement.html">Retirement</a></li>
+                        <li><a class="dropdown-item" href="si-ci.html">SI / CI</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+            <h2 class="text-center mb-3 text-warning">CPC Calculator</h2>
+
+            <!-- DEFINITION (CENTERED) -->
+            <div class="text-center mb-4">
+
+                <h5 class="fw-bold">What is CPC?</h5>
+
+                <p class="text-muted">
+                    CPC (Cost Per Click) is the amount you pay for each click on your advertisement.
+                    It is widely used in search and performance marketing campaigns.
+                </p>
+
+            </div>
+
+            <p class="text-center text-muted small fst-italic mb-3">
+                Disclaimer : Enter numbers in your local currency — the calculation works the same regardless of currency.
+            </p>
+
+            <!-- INPUTS -->
+            <div class="mb-3">
+                <label class="form-label">Total Spend</label>
+                <input type="number" id="cpc_spend" class="form-control" placeholder="Enter spend">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Total Clicks</label>
+                <input type="number" id="cpc_clicks" class="form-control" placeholder="Enter clicks">
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="d-flex gap-2">
+                <button class="btn btn-warning w-100" onclick="calculateCPC()">Calculate</button>
+                <button class="btn btn-secondary w-100" onclick="document.getElementById('cpc_spend').value=''; document.getElementById('cpc_clicks').value=''; document.getElementById('cpc_result').innerHTML='';">
+                    Reset
+                </button>
+            </div>
+
+            <!-- RESULT -->
+            <div id="cpc_result" class="result-box mt-3"></div>
+
+            <hr>
+
+            <!-- FORMULA -->
+            <h5 class="fw-bold">Formula</h5>
+            <p>CPC = Total Spend ÷ Total Clicks</p>
+
+            <!-- EXAMPLE -->
+            <h5 class="fw-bold">Example</h5>
+            <p>If Total Spend = 1,000 and Total Clicks = 200:</p>
+            <p><strong>CPC = 5</strong> (1,000 ÷ 200)</p>
+
+            <hr>
+
+            <h5 class="fw-bold">How CPC Connects to Your Other Metrics</h5>
+            <p>
+                CPC doesn't exist in isolation — it's shaped by what happens before the click and
+                it directly shapes what happens after. Understanding these connections helps you
+                figure out whether a high CPC is actually a problem, or just the cost of a
+                competitive but profitable channel.
+            </p>
+            <ul>
+                <li><strong><a href="ctr.html">CTR (Click-Through Rate)</a></strong> — a low CTR often drives CPC up, since ad platforms typically charge more per click for ads they consider less relevant or engaging.</li>
+                <li><strong><a href="cpm.html">CPM (Cost Per Mille)</a></strong> — CPC and CPM are two sides of the same spend; CPC = CPM ÷ (CTR × 10), so a rising CPM with a flat CTR will push your CPC higher too.</li>
+                <li><strong><a href="cpa.html">CPA (Cost Per Acquisition)</a></strong> — CPA is essentially CPC divided by your conversion rate. A low CPC can still produce a high CPA if very few of those clicks convert.</li>
+                <li><strong><a href="roas.html">ROAS (Return on Ad Spend)</a></strong> — a higher CPC isn't necessarily bad if the resulting customers generate enough revenue to keep ROAS strong.</li>
+            </ul>
+            <p class="mb-0">
+                In short: CPC is rarely worth judging alone. A "high" CPC that still delivers a
+                healthy CPA and ROAS is usually a good trade, while a "low" CPC that doesn't
+                convert is the more expensive problem.
+            </p>
+
+            <hr>
+
+            <h5 class="fw-bold">Related Calculators</h5>
+            <ul>
+                <li><a href="ctr.html">CTR Calculator</a> — see the click rate driving your CPC in the first place.</li>
+                <li><a href="cpm.html">CPM Calculator</a> — compare cost per impression versus cost per click.</li>
+                <li><a href="cpa.html">CPA Calculator</a> — find out what each of those clicks costs once it becomes a customer.</li>
+                <li><a href="roas.html">ROAS Calculator</a> — check whether your CPC is actually paying off in revenue.</li>
+            </ul>
+
+            <hr>
+
+            <h5 class="text-warning fw-bold">Frequently Asked Questions</h5>
+
+            <div class="accordion" id="cpcFaqAccordion">
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cpcFaqHeading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cpcFaq1" aria-expanded="false" aria-controls="cpcFaq1">
+                            What is a good CPC?
+                        </button>
+                    </h3>
+                    <div id="cpcFaq1" class="accordion-collapse collapse" aria-labelledby="cpcFaqHeading1" data-bs-parent="#cpcFaqAccordion">
+                        <div class="accordion-body">
+                            A good CPC depends heavily on your industry and how much a customer is worth to you. Highly competitive industries like legal or insurance often see CPCs of several dollars, while other niches can be well under a dollar. Compare your CPC to your profit margin per sale, not just industry averages.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cpcFaqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cpcFaq2" aria-expanded="false" aria-controls="cpcFaq2">
+                            How is CPC calculated?
+                        </button>
+                    </h3>
+                    <div id="cpcFaq2" class="accordion-collapse collapse" aria-labelledby="cpcFaqHeading2" data-bs-parent="#cpcFaqAccordion">
+                        <div class="accordion-body">
+                            CPC is calculated by dividing your total ad spend by the total number of clicks received. For example, spending $200 to get 100 clicks gives a CPC of $2.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cpcFaqHeading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cpcFaq3" aria-expanded="false" aria-controls="cpcFaq3">
+                            What's the difference between CPC and CPA?
+                        </button>
+                    </h3>
+                    <div id="cpcFaq3" class="accordion-collapse collapse" aria-labelledby="cpcFaqHeading3" data-bs-parent="#cpcFaqAccordion">
+                        <div class="accordion-body">
+                            CPC measures the cost of a single click, regardless of what happens afterward. CPA measures the cost of an actual conversion, such as a sale or sign-up. A campaign can have a low CPC but a high CPA if very few clicks lead to conversions.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cpcFaqHeading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cpcFaq4" aria-expanded="false" aria-controls="cpcFaq4">
+                            How can I lower my CPC?
+                        </button>
+                    </h3>
+                    <div id="cpcFaq4" class="accordion-collapse collapse" aria-labelledby="cpcFaqHeading4" data-bs-parent="#cpcFaqAccordion">
+                        <div class="accordion-body">
+                            Improving your ad's relevance and click-through rate often lowers CPC on auction-based platforms like Google and Facebook, since these platforms reward ads that perform well with lower costs. Narrowing targeting and testing different bidding strategies can also help.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cpcFaqHeading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cpcFaq5" aria-expanded="false" aria-controls="cpcFaq5">
+                            Why do CPCs vary so much between platforms?
+                        </button>
+                    </h3>
+                    <div id="cpcFaq5" class="accordion-collapse collapse" aria-labelledby="cpcFaqHeading5" data-bs-parent="#cpcFaqAccordion">
+                        <div class="accordion-body">
+                            CPC depends on competition for the same audience or keywords. Platforms and industries with more advertisers bidding for the same attention, like Google Search ads for competitive keywords, tend to have higher CPCs than less competitive channels.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="cpcFaqHeading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cpcFaq6" aria-expanded="false" aria-controls="cpcFaq6">
+                            Is a lower CPC always better?
+                        </button>
+                    </h3>
+                    <div id="cpcFaq6" class="accordion-collapse collapse" aria-labelledby="cpcFaqHeading6" data-bs-parent="#cpcFaqAccordion">
+                        <div class="accordion-body">
+                            Not necessarily. A very low CPC can sometimes come from broad, low-intent traffic that doesn't convert well. It's more useful to look at CPC alongside conversion rate and CPA to judge whether the clicks you're paying for are actually valuable.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="text-white text-center py-4 mt-5">
+
+    <p class="mb-2">
+        © 2026 YourDaily Calculator. All Rights Reserved.
+    </p>
+
+    <p class="mb-0">
+        <a href="about.html" style="color:var(--primary);" class="text-decoration-none">About Us</a>
+        <span class="text-white"> | </span>
+        <a href="privacy.html" style="color:var(--primary);" class="text-decoration-none">Privacy Policy</a>
+        <span class="text-white"> | </span>
+        <a href="disclaimer.html" style="color:var(--primary);" class="text-decoration-none">Disclaimer</a>
+    </p>
+
+</footer>
+
+<!-- JS -->
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
