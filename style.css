@@ -1,0 +1,399 @@
+/* ===========================
+   YourDaily Calculator Theme
+   Orange + White (Bootstrap Override)
+=========================== */
+
+:root{
+    --primary:#f97316;
+    --dark:#111827;
+    --light:#ffffff;
+    --bg:#f8fafc;
+}
+
+/*FONT UPDATE*/
+
+/* ===========================
+   FONT UPGRADE
+   Poppins for headings, Inter for body text
+   Add this right after your :root{} block in style.css
+=========================== */
+
+body{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background:var(--bg);
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.btn{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Slightly tighter letter spacing on headings looks more intentional with Poppins */
+h1, h2, h3{
+    letter-spacing: -0.02em;
+}
+
+
+/*FONT UPDATE END*/
+
+body{
+    background:var(--bg);
+}
+
+/* Navbar */
+.navbar{
+    background:var(--dark) !important;
+}
+
+.navbar-brand{
+    color:var(--primary) !important;
+    font-size:20px;
+}
+
+.nav-link{
+    color:#ffffff !important;
+}
+
+.nav-link:hover{
+    color:var(--primary) !important;
+}
+
+/* Buttons */
+.btn-warning{
+    background:var(--primary);
+    border:none;
+    color:#fff;
+}
+
+.btn-warning:hover{
+    background:#ea580c;
+    color:#fff;
+}
+
+/* Cards */
+.card{
+    border:none;
+    border-radius:16px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Hero section */
+h1{
+    color:var(--primary);
+}
+
+/* Footer */
+footer{
+    background:var(--dark);
+}
+
+/* Calculator pages */
+.calculator-box{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.result-box{
+    margin-top:20px;
+    padding:15px;
+    background:#fff7ed;
+    border-left:5px solid var(--primary);
+    font-weight:bold;
+}
+
+/* FAQ Questions */
+
+.accordion-button{
+
+    font-weight:700 !important;
+
+}
+/* ==========================================
+   EMI CHART
+========================================== */
+
+.chart-wrapper{
+
+    width:240px;
+
+    height:240px;
+
+    margin:0 auto;
+
+    position:relative;
+
+}
+
+#emiChart{
+
+    width:240px !important;
+
+    height:240px !important;
+
+}
+
+#chartCenterText{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    text-align:center;
+
+    pointer-events:none;
+
+}
+
+#chartTotal{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+#chartLabel{
+
+    font-size:13px;
+
+    color:#6b7280;
+
+}
+
+.legend-color{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+}
+
+.principal-color{
+
+    background:#F97316;
+
+}
+
+.interest-color{
+
+    background:#E1A10B;
+
+}
+
+#principalAmount,
+#interestAmount{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-top:8px;
+
+}
+
+#principalPercent,
+#interestPercent{
+
+    font-size:14px;
+
+    color:#6b7280;
+
+}
+
+@media(max-width:768px){
+
+    .chart-wrapper{
+
+        width:200px;
+
+        height:200px;
+
+    }
+
+}
+
+/* ==========================================
+   Chart Animation
+========================================== */
+
+#chartSection{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    visibility:hidden;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:
+
+        opacity .5s ease,
+
+        transform .5s ease,
+
+        max-height .5s ease;
+
+}
+
+#chartSection.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    visibility:visible;
+
+    max-height:700px;
+
+}
+
+
+
+/* ==========================================
+   SI / CI Tabs
+========================================== */
+
+#siCiTabs{
+    border-bottom:none;
+}
+
+#siCiTabs{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+#siCiTabs .nav-item{
+
+    flex:none;
+
+}
+
+#siCiTabs .nav-link{
+
+    width:auto;
+
+    padding:8px 16px;
+
+}
+
+#siCiTabs .nav-link{
+
+    width:100%;
+
+    color:#495057 !important;
+
+    background:#f8f9fa;
+
+    border:1px solid #dee2e6;
+
+    font-weight:600;
+
+    border-radius:8px 8px 0 0;
+
+    transition:all .3s ease;
+
+}
+
+#siCiTabs .nav-link:hover{
+
+    color:#F97316 !important;
+
+    background:#fff7ed;
+
+}
+
+#siCiTabs .nav-link.active{
+
+    color:#ffffff !important;
+
+    background:#F97316 !important;
+
+    border-color:#F97316 !important;
+
+}
+
+
+
+/* ==========================================
+   FD / RD Tabs
+========================================== */
+
+#fdRdTabs{
+
+    display:flex;
+
+    gap:10px;
+
+    border-bottom:none;
+
+}
+
+#fdRdTabs .nav-item{
+
+    flex:none;
+
+}
+
+#fdRdTabs .nav-link{
+
+    width:auto;
+
+    padding:10px 20px;
+
+    color:#495057 !important;
+
+    background:#f8f9fa;
+
+    border:1px solid #dee2e6;
+
+    border-radius:8px 8px 0 0;
+
+    font-weight:600;
+
+    transition:all .3s ease;
+
+}
+
+#fdRdTabs .nav-link:hover{
+
+    color:#F97316 !important;
+
+    background:#fff7ed;
+
+}
+
+#fdRdTabs .nav-link.active{
+
+    color:#ffffff !important;
+
+    background:#F97316 !important;
+
+    border-color:#F97316 !important;
+
+}
